@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55274b9f-ecd2-409f-8866-ef04d0c0e127" name="Default" comment="parser added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_all_2_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_9_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/interfaces/Parser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/parsers/HtmlParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/search/system/HtmlParserTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/search/parsers/HtmlParser.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/search/actions/IndexAction.java" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/actions/IndexAction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/search/actions/ResultAction.java" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/actions/ResultAction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/search/dao/PageDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/dao/PageDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/search/models/Page.java" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/models/Page.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/search/search.iml" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/search.iml" />
+    <list default="true" id="55274b9f-ecd2-409f-8866-ef04d0c0e127" name="Default" comment="parser updated;tests added;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search.iml" afterPath="$PROJECT_DIR$/search.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/search/system/interfaces/Parser.java" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/interfaces/Parser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/search/system/parsers/HtmlParser.java" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/parsers/HtmlParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/search/system/HtmlParserTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/search/system/HtmlParserTest.java" />
     </list>
     <ignored path="search.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,21 +30,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HtmlParserTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HtmlParserTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/search/system/HtmlParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+            <state relative-caret-position="244">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/main.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/search/system/search.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/search/system/interfaces/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,12 +75,41 @@
       <file leaf-file-name="HtmlParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/search/system/parsers/HtmlParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="409">
+              <caret line="51" column="119" selection-start-line="51" selection-start-column="119" selection-end-line="51" selection-end-column="119" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1434#1442#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Consumer.class" pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-i386/jre/lib/rt.jar!/java/util/function/Consumer.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Collectors.class" pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-i386/jre/lib/rt.jar!/java/util/stream/Collectors.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="73" column="47" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Function.class" pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-i386/jre/lib/rt.jar!/java/util/function/Function.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,8 +117,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+            <state relative-caret-position="199">
+              <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -114,8 +158,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/search/parsers/HtmlParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/search/system/HtmlParser.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/search/HtmlParserTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/search/system/HtmlParserTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/search/system/interfaces/Parser.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/search/system/parsers/HtmlParser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/search/system/HtmlParserTest.java" />
       </list>
     </option>
   </component>
@@ -136,6 +182,28 @@
     <option name="y" value="24" />
     <option name="width" value="1855" />
     <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Since15</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -349,6 +417,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="GO_FMT" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -780,28 +853,17 @@
       <option name="project" value="LOCAL" />
       <updated>1478099968090</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="parser added">
+      <created>1478104205828</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1478104205828</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HtmlParserTest - 2016.11.02 at 18h 58m 46s.xml">
-      <configuration name="HtmlParserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HtmlParserTest - 2016.11.02 at 18h 59m 45s.xml">
-      <configuration name="HtmlParserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HtmlParserTest - 2016.11.02 at 19h 08m 26s.xml">
-      <configuration name="HtmlParserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 19h 21m 36s.xml">
-      <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 19h 22m 59s.xml">
-      <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 19h 23m 14s.xml">
-      <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 19h 23m 35s.xml">
       <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
     </history-entry>
@@ -812,6 +874,24 @@
       <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
     </history-entry>
     <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 19h 29m 31s.xml">
+      <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 19h 32m 15s.xml">
+      <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 19h 32m 46s.xml">
+      <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 19h 57m 30s.xml">
+      <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 20h 06m 10s.xml">
+      <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 20h 07m 40s.xml">
+      <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlParserTest_(1) - 2016.11.02 at 20h 10m 39s.xml">
       <configuration name="HtmlParserTest (1)" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -861,7 +941,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="dao added" />
     <MESSAGE value="parser added" />
-    <option name="LAST_COMMIT_MESSAGE" value="parser added" />
+    <MESSAGE value="parser updated;tests added;" />
+    <option name="LAST_COMMIT_MESSAGE" value="parser updated;tests added;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -872,7 +953,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/search/system/parsers/HtmlParser.java</url>
-          <line>30</line>
+          <line>35</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -880,6 +961,18 @@
       <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="search" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="search-system" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -908,7 +1001,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1434#1442#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1132,40 +1224,169 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/main.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/search/system/parsers/HtmlParser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/search/system/search.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1434#1442#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/search/system/HtmlParserTest.java">
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-i386/jre/lib/rt.jar!/java/util/function/Consumer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        <state relative-caret-position="120">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-i386/jre/lib/rt.jar!/java/util/function/Function.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-i386/jre/lib/rt.jar!/java/util/stream/Collectors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="73" column="47" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/search/system/interfaces/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="120">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/search/system/parsers/HtmlParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="51" column="119" selection-start-line="51" selection-start-column="119" selection-end-line="51" selection-end-column="119" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/search/system/HtmlParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>search</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: asm:asm-commons:3.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
