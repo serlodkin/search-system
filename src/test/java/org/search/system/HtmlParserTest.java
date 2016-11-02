@@ -6,6 +6,7 @@ import org.search.system.parsers.HtmlParser;
 import java.util.ArrayList;
 
 public class HtmlParserTest extends TestCase {
+
     public void testParse1() throws Exception{
         HtmlParser parser=new HtmlParser();
         assertEquals(parser.parse("https://habrahabr.ru/").getRang(),0);
