@@ -1,11 +1,10 @@
-package org.search.dao;
-import com.mongodb.DBCursor;
+package org.search.system.dao;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
-import org.search.models.Page;
+import org.search.system.models.Page;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;

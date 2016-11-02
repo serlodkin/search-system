@@ -1,4 +1,4 @@
-package org.search.models;
+package org.search.system.models;
 
 import java.util.List;
 

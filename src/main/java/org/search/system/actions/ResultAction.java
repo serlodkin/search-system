@@ -1,4 +1,4 @@
-package org.search.actions;
+package org.search.system.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 
