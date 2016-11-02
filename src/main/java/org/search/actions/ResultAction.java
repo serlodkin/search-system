@@ -12,5 +12,11 @@ public class ResultAction extends ActionSupport{
     public void setSearchQuery(String searchQuery) {
         this.searchQuery = searchQuery;
     }
-    
+
+    @Override
+    public String execute(){
+
+        return SUCCESS;
+    }
+
 }
