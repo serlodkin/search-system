@@ -1,5 +1,4 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
 <body>
     <form  style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto" action="result.action">
