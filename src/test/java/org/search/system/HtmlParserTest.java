@@ -1,7 +1,6 @@
 package org.search.system;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 import org.search.system.parsers.HtmlParser;
 
 import java.util.ArrayList;
@@ -18,6 +17,10 @@ public class HtmlParserTest extends TestCase {
         assertEquals(parser.parse("https://m.lenta.ru/").getTitle(),"Lenta.ru");
     }
 
+    public void testParse3() throws Exception {
+        HtmlParser parser = new HtmlParser();
+        assertEquals(parser.parse("http://example.com/").getTitle(), "Example Domain");
+    }
 
     public void testParse() throws Exception {
         HtmlParser parser=new HtmlParser();
