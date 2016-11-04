@@ -1,7 +1,9 @@
 package org.search.system.interfaces;
 
-import java.util.List;
+import org.search.system.models.Word;
+
+import java.util.ArrayList;
 
 public interface Recognizer {
-    List<String> recognize(String request);
+    ArrayList<Word> recognize(String request);
 }
