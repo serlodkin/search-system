@@ -29,6 +29,20 @@ public class WordDao {
             ex.printStackTrace();
         }
         return res;
+    }
 
+    public void insert(Word word) {
+        try {
+            MongoClient mongo = new MongoClient("localhost", 27017);
+            MongoDatabase synonyms = mongo.getDatabase("synonyms");
+            MongoCollection<Document> collection = synonyms.getCollection("synonims");
+            Document document = new Document();
+            document.put("word", word.getWord());
+            document.put("synonims", word.getSynonims());
+            collection.insertOne(document);
+            mongo.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }
