@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class WordDao {
     public Word getWord(String word) {
-        Word res = new Word(word, new ArrayList<String>());
+        Word res = new Word(word, new ArrayList<>());
         try {
             MongoClient mongo = new MongoClient("localhost", 27017);
             MongoDatabase synonims = mongo.getDatabase("synonims");
@@ -34,7 +34,7 @@ public class WordDao {
     public void insert(Word word) {
         try {
             MongoClient mongo = new MongoClient("localhost", 27017);
-            MongoDatabase synonyms = mongo.getDatabase("synonyms");
+            MongoDatabase synonyms = mongo.getDatabase("synonims");
             MongoCollection<Document> collection = synonyms.getCollection("synonims");
             Document document = new Document();
             document.put("word", word.getWord());

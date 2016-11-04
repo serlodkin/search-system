@@ -4,8 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/search/system/dao/WordDao.java" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55274b9f-ecd2-409f-8866-ef04d0c0e127" name="Default" comment="dao tests">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/search/system/dao/WordDaoTest.java" />
+    <list default="true" id="55274b9f-ecd2-409f-8866-ef04d0c0e127" name="Default" comment="fix">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/search/system/dao/WordDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/dao/WordDao.java" />
     </list>
@@ -104,9 +103,11 @@
       <file leaf-file-name="WordDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/search/system/dao/WordDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1238,7 +1239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478260635148</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="WordDao updated">
+      <created>1478261420973</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1478261420973</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1317,13 +1325,14 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="jsp setup" />
-    <MESSAGE value="fix" />
     <MESSAGE value="dao added" />
     <MESSAGE value="parser added" />
     <MESSAGE value="parser updated;tests added;" />
     <MESSAGE value="recognizer prototype" />
     <MESSAGE value="dao tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="dao tests" />
+    <MESSAGE value="WordDao updated" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1725,9 +1734,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/search/system/dao/WordDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
