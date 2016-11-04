@@ -2,13 +2,12 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/search/system/dao/WordDao.java" />
+    <bookmark url="file://$PROJECT_DIR$/src/test/java/org/search/system/Processor/DataProcessorTest.java" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55274b9f-ecd2-409f-8866-ef04d0c0e127" name="Default" comment="add DataProcessor">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/Processor/DataProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/search/system/Processor/DataProcessorTest.java" />
+    <list default="true" id="55274b9f-ecd2-409f-8866-ef04d0c0e127" name="Default" comment="add tests">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/search/system/actions/ResultAction.java" afterPath="$PROJECT_DIR$/src/main/java/org/search/system/actions/ResultAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/search/system/Processor/DataProcessorTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/search/system/Processor/DataProcessorTest.java" />
     </list>
     <ignored path="search.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +31,8 @@
       <file leaf-file-name="DataProcessorTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/search/system/Processor/DataProcessorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+            <state relative-caret-position="357">
+              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1337,13 +1336,17 @@
       <option name="project" value="LOCAL" />
       <updated>1478267450630</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add DataProcessor">
+      <created>1478274343886</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1478274343887</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DataProcessorTest - 2016.11.04 at 18h 34m 01s.xml">
-      <configuration name="DataProcessorTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DataProcessorTest - 2016.11.04 at 18h 42m 00s.xml">
       <configuration name="DataProcessorTest" configurationId="JUnit" />
     </history-entry>
@@ -1353,23 +1356,26 @@
     <history-entry file="DataProcessorTest - 2016.11.04 at 18h 44m 38s.xml">
       <configuration name="DataProcessorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SynonimProviderTest - 2016.11.04 at 16h 12m 58s.xml">
-      <configuration name="SynonimProviderTest" configurationId="JUnit" />
+    <history-entry file="DataProcessorTest - 2016.11.04 at 18h 46m 01s.xml">
+      <configuration name="DataProcessorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TagsRecognizerTest - 2016.11.04 at 16h 07m 14s.xml">
-      <configuration name="TagsRecognizerTest" configurationId="JUnit" />
+    <history-entry file="DataProcessorTest - 2016.11.04 at 18h 50m 28s.xml">
+      <configuration name="DataProcessorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TagsRecognizerTest - 2016.11.04 at 16h 07m 28s.xml">
-      <configuration name="TagsRecognizerTest" configurationId="JUnit" />
+    <history-entry file="DataProcessorTest - 2016.11.04 at 18h 51m 06s.xml">
+      <configuration name="DataProcessorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TagsRecognizerTest - 2016.11.04 at 16h 10m 06s.xml">
-      <configuration name="TagsRecognizerTest" configurationId="JUnit" />
+    <history-entry file="DataProcessorTest - 2016.11.04 at 18h 51m 40s.xml">
+      <configuration name="DataProcessorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TagsRecognizerTest - 2016.11.04 at 16h 10m 09s.xml">
-      <configuration name="TagsRecognizerTest" configurationId="JUnit" />
+    <history-entry file="DataProcessorTest - 2016.11.04 at 18h 52m 03s.xml">
+      <configuration name="DataProcessorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TagsRecognizerTest - 2016.11.04 at 16h 10m 38s.xml">
-      <configuration name="TagsRecognizerTest" configurationId="JUnit" />
+    <history-entry file="DataProcessorTest - 2016.11.04 at 18h 53m 33s.xml">
+      <configuration name="DataProcessorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DataProcessorTest - 2016.11.04 at 18h 56m 52s.xml">
+      <configuration name="DataProcessorTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -1378,7 +1384,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1428,7 +1434,8 @@
     <MESSAGE value="recognizer update;tests added" />
     <MESSAGE value="action updated" />
     <MESSAGE value="add DataProcessor" />
-    <option name="LAST_COMMIT_MESSAGE" value="add DataProcessor" />
+    <MESSAGE value="add tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tests" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1851,8 +1858,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/search/system/Processor/DataProcessorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+        <state relative-caret-position="357">
+          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
