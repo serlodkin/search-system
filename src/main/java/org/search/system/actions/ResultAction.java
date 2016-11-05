@@ -1,10 +1,10 @@
 package org.search.system.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import org.search.system.Processor.DataProcessor;
 import org.search.system.dao.PageDao;
 import org.search.system.models.Page;
 import org.search.system.models.Word;
+import org.search.system.processor.DataProcessor;
 import org.search.system.recognition.TagsRecognizer;
 
 import java.util.ArrayList;

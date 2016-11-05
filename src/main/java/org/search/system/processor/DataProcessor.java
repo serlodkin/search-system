@@ -1,4 +1,4 @@
-package org.search.system.Processor;
+package org.search.system.processor;
 
 import org.search.system.models.Page;
 import org.search.system.models.Word;
@@ -12,7 +12,7 @@ import java.util.HashSet;
  */
 public class DataProcessor {
     public ArrayList<Page> process(HashMap<String, HashSet<Page>> tagResult, ArrayList<Word> tags) {
-        ArrayList<Page> res = new ArrayList<Page>();
+        ArrayList<Page> res = new ArrayList<>();
         if (tagResult.size() == 0) {
             return res;
         }

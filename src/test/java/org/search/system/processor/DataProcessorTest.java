@@ -1,4 +1,4 @@
-package org.search.system.Processor;
+package org.search.system.processor;
 
 import junit.framework.TestCase;
 import org.search.system.models.Page;
