@@ -13,7 +13,7 @@ import java.util.HashSet;
 
 public class ResultAction extends ActionSupport{
     private String searchQuery;
-
+    private ArrayList<Page> result;
     public String getSearchQuery() {
         return searchQuery;
     }
@@ -34,13 +34,26 @@ public class ResultAction extends ActionSupport{
             for (String synonim : tag.getSynonims()) {
                 temp.addAll(pageDao.getPages(synonim));
             }
-            resultByTag.put(tag.getWord(), temp);
+
+            resultByTag.put(tag.getWord(), (HashSet<Page>) temp.clone());
             temp.clear();
         }
-        DataProcessor dataProcessor = new DataProcessor();
-        ArrayList<Page> result = dataProcessor.process(resultByTag, tags);
+        System.out.print(resultByTag.get("test"));
 
+        DataProcessor dataProcessor = new DataProcessor();
+        result = dataProcessor.process(resultByTag, tags);
+        for (Page s : result) {
+            System.out.print(s.getTitle());
+        }
         return SUCCESS;
     }
 
+
+    public ArrayList<Page> getResult() {
+        return result;
+    }
+
+    public void setResult(ArrayList<Page> result) {
+        this.result = result;
+    }
 }
