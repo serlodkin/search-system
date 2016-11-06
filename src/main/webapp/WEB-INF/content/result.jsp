@@ -3,7 +3,8 @@
 <%@ taglib prefix="sx" uri="/struts-dojo-tags"%>
 
 <head>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    <style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
         hgroup { padding-left: 15px; border-bottom: 1px solid #ccc; }
         hgroup h1 { font: 500 normal 1.625em "Roboto",Arial,Verdana,sans-serif; color: #2a3644; margin-top: 0; line-height: 1.15; }
         hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; color: #2a3644; margin: 0; padding-bottom: 10px; }
@@ -27,7 +28,7 @@
     </style>
 </head>
 <body>
-    <form  style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto" action="result.action">
+    <form  style="margin-left:auto;margin-right:auto" action="result.action">
         <input name="searchQuery" id="searchQuery">
         <input type="submit" class="btn btn-success">
     </form>
