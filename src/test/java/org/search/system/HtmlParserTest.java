@@ -9,18 +9,18 @@ public class HtmlParserTest extends TestCase {
 
     public void testParse1() throws Exception{
         HtmlParser parser=new HtmlParser();
-        assertEquals(parser.parse("https://habrahabr.ru/").getRang(),0);
-        assertEquals(parser.parse("https://habrahabr.ru/").getTitle(),"Интересные публикации / Хабрахабр");
+        assertEquals(0, parser.parse("https://habrahabr.ru/").getRang());
+        assertEquals("Интересные публикации / Хабрахабр", parser.parse("https://habrahabr.ru/").getTitle());
     }
 
     public void testParse2() throws Exception{
         HtmlParser parser=new HtmlParser();
-        assertEquals(parser.parse("https://m.lenta.ru/").getTitle(),"Lenta.ru");
+        assertEquals("Lenta.ru", parser.parse("https://m.lenta.ru/").getTitle());
     }
 
     public void testParse3() throws Exception {
         HtmlParser parser = new HtmlParser();
-        assertEquals(parser.parse("http://example.com/").getTitle(), "Example Domain");
+        assertEquals("Example Domain", parser.parse("http://example.com/").getTitle());
     }
 
     public void testParse() throws Exception {
@@ -34,11 +34,11 @@ public class HtmlParserTest extends TestCase {
         excepted.add("досуг");
 
 
-        assertEquals(parser.parse("https://anonimplace.com/").getTitle(),"Анонимный чат");
-        assertEquals(parser.parse("https://anonimplace.com/").getLink(),"https://anonimplace.com/");
-        assertEquals(parser.parse("https://anonimplace.com/").getDescription(),"Анонимный чат,разговор с незнакомцем,случайная беседа");
-        assertEquals(parser.parse("https://anonimplace.com/").getRang(),0);
-        assertEquals(parser.parse("https://anonimplace.com/").getTags(),excepted);
+        assertEquals("Анонимный чат", parser.parse("https://anonimplace.com/").getTitle());
+        assertEquals("https://anonimplace.com/", parser.parse("https://anonimplace.com/").getLink());
+        assertEquals("Анонимный чат,разговор с незнакомцем,случайная беседа", parser.parse("https://anonimplace.com/").getDescription());
+        assertEquals(0, parser.parse("https://anonimplace.com/").getRang());
+        assertEquals(excepted, parser.parse("https://anonimplace.com/").getTags());
 
     }
 

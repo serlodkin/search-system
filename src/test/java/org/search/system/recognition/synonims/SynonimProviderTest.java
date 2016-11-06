@@ -10,7 +10,7 @@ public class SynonimProviderTest extends TestCase {
         ArrayList<String> synonims = new ArrayList<>();
         synonims.add("statistics");
         synonims.add("documents");
-        assertEquals(synonimProvider.getSynonymsFromDB("data"), synonims);
+        assertEquals(synonims, synonimProvider.getSynonymsFromDB("data"));
     }
 
 }

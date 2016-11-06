@@ -34,10 +34,10 @@ public class DataProcessorTest extends TestCase {
         d.add(new Word("Test", new ArrayList<>()));
         ArrayList<Page> result = dataProcessor.process(test, d);
         assertEquals(result.size(), 1);
-        assertEquals(result.get(0).getTitle(), "Test");
-        assertEquals(result.get(0).getRang(), 0);
-        assertEquals(result.get(0).getDescription(), "Test");
-        assertEquals(result.get(0).getLink(), "http://example.com");
+        assertEquals("Test", result.get(0).getTitle());
+        assertEquals(0, result.get(0).getRang());
+        assertEquals("Test", result.get(0).getDescription());
+        assertEquals("http://example.com", result.get(0).getLink());
     }
 
     public void testProcess1() throws Exception {
@@ -58,15 +58,15 @@ public class DataProcessorTest extends TestCase {
         ArrayList<Page> result = dataProcessor.process(test, d);
         assertEquals(result.size(), 2);
 
-        assertEquals(result.get(0).getLink(), "http://example.com");
-        assertEquals(result.get(0).getTitle(), "Data");
-        assertEquals(result.get(0).getDescription(), "Test");
-        assertEquals(result.get(0).getRang(), 0);
+        assertEquals("http://example.com", result.get(0).getLink());
+        assertEquals("Data", result.get(0).getTitle());
+        assertEquals("Test", result.get(0).getDescription());
+        assertEquals(0, result.get(0).getRang());
 
-        assertEquals(result.get(1).getLink(), "http://example.com");
-        assertEquals(result.get(1).getTitle(), "Test");
-        assertEquals(result.get(1).getDescription(), "Data");
-        assertEquals(result.get(1).getRang(), 0);
+        assertEquals("http://example.com", result.get(1).getLink());
+        assertEquals("Test", result.get(1).getTitle());
+        assertEquals("Data", result.get(1).getDescription());
+        assertEquals(0, result.get(1).getRang());
 
     }
 
@@ -75,7 +75,7 @@ public class DataProcessorTest extends TestCase {
         HashMap<String, HashSet<Page>> test = new HashMap<>();
         ArrayList<Word> d = new ArrayList<>();
         ArrayList<Page> result = dataProcessor.process(test, d);
-        assertEquals(result.size(), 0);
+        assertEquals(0, result.size());
     }
 
 }

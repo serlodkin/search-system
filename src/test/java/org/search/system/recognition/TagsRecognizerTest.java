@@ -11,8 +11,8 @@ public class TagsRecognizerTest extends TestCase {
         ArrayList<String> synonims = new ArrayList<>();
         synonims.add("statistics");
         synonims.add("documents");
-        assertEquals(t.recognize("data").get(0).getWord(), "data");
-        assertEquals(t.recognize("data").get(0).getSynonims(), synonims);
+        assertEquals("data", t.recognize("data").get(0).getWord());
+        assertEquals(synonims, t.recognize("data").get(0).getSynonims());
     }
 
 }
