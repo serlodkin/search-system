@@ -47,6 +47,7 @@
             <article class="search-result row">
                 <div class="col-xs-12 col-sm-12 col-md-3">
                     <a class="thumbnail" href=<s:property value="link"/>><s:property value="title"/></a>
+                    <img src='https://www.google.com/s2/favicons?domain=<s:property value="link"/>'/>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
                     <h3><a class="thumbnail" href=<s:property value="link"/>><s:property value="title"/></a></h3>
