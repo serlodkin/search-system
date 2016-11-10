@@ -42,9 +42,7 @@ public class ResultAction extends ActionSupport{
 
         DataProcessor dataProcessor = new DataProcessor();
         result = dataProcessor.process(resultByTag, tags);
-        for (Page s : result) {
-            System.out.print(s.getTitle());
-        }
+
         return SUCCESS;
     }
 
