@@ -27,6 +27,10 @@ public class PageDao {
                 MongoCollection<Document> collection = pages.getCollection(tag.toLowerCase());
                 collection.insertOne(document);
             }
+            for (String tag : page.getTitle().split(" ")) {
+                MongoCollection<Document> collection = pages.getCollection(tag.toLowerCase());
+                collection.insertOne(document);
+            }
             mongo.close();
         } catch (Exception ex) {
             ex.printStackTrace();
