@@ -14,6 +14,7 @@ public class TagsRecognizer implements Recognizer {
     public ArrayList<Word> recognize(String request) {
         ArrayList<String> words = new ArrayList<>((Arrays.asList(request.split(",")))
                 .stream()
+                .parallel()
                 .map(String::trim)
                 .collect(Collectors.toList()));
         ArrayList<Word> keywords = new ArrayList<>();

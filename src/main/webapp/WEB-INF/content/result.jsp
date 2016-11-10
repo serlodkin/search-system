@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-    <form  style="margin-left:auto;margin-right:auto" action="result.action">
+    <form  style="width:400px;margin-left: auto; margin-right:auto;" action="result.action">
         <input name="searchQuery" id="searchQuery">
         <input type="submit" class="btn btn-success">
     </form>

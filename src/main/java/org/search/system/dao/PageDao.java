@@ -1,11 +1,13 @@
 package org.search.system.dao;
+
+import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.search.system.models.Page;
-import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class PageDao {
             document.put("link",page.getLink());
             document.put("tags",page.getTags());
             for(String tag:page.getTags()){
-                MongoCollection<Document> collection=pages.getCollection(tag);
+                MongoCollection<Document> collection = pages.getCollection(tag.toLowerCase());
                 collection.insertOne(document);
             }
             mongo.close();
@@ -32,7 +34,7 @@ public class PageDao {
     }
 
     public List<Page> getPages(String tag){
-        ArrayList<Page> result=new ArrayList<Page>();
+        ArrayList<Page> result = new ArrayList<>();
         try {
             MongoClient mongo = new MongoClient("localhost", 27017);
             MongoDatabase pages=mongo.getDatabase("pages");

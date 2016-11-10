@@ -17,6 +17,10 @@ public class Word {
     }
 
     public String getWord() {
+        if (word == null) {
+            return "";
+        }
+
         return word;
     }
 }

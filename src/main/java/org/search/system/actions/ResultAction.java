@@ -19,11 +19,11 @@ public class ResultAction extends ActionSupport{
     }
 
     public void setSearchQuery(String searchQuery) {
-        this.searchQuery = searchQuery;
+        this.searchQuery = searchQuery.toLowerCase();
     }
 
     @Override
-    public String execute(){
+    public String execute() {
         TagsRecognizer recognizer = new TagsRecognizer();
         ArrayList<Word> tags = recognizer.recognize(searchQuery);
         HashMap<String, HashSet<Page>> resultByTag = new HashMap<>();
@@ -31,14 +31,13 @@ public class ResultAction extends ActionSupport{
         HashSet<Page> temp = new HashSet<>();
         for (Word tag : tags) {
             temp.addAll(pageDao.getPages(tag.getWord()));
+
             for (String synonim : tag.getSynonims()) {
                 temp.addAll(pageDao.getPages(synonim));
             }
-
             resultByTag.put(tag.getWord(), (HashSet<Page>) temp.clone());
             temp.clear();
         }
-        System.out.print(resultByTag.get("test"));
 
         DataProcessor dataProcessor = new DataProcessor();
         result = dataProcessor.process(resultByTag, tags);
