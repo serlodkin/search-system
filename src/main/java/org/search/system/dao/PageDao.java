@@ -14,8 +14,8 @@ import java.util.List;
 public class PageDao {
 
     public void insert(Page page) {
+        MongoClient mongo = new MongoClient("localhost", 27017);
         try {
-            MongoClient mongo = new MongoClient("localhost", 27017);
             MongoDatabase pages=mongo.getDatabase("pages");
             Document document = new Document();
             document.put("title",page.getTitle());
@@ -33,14 +33,15 @@ public class PageDao {
             }
             mongo.close();
         } catch (Exception ex) {
+            mongo.close();
             ex.printStackTrace();
         }
     }
 
     public List<Page> getPages(String tag){
+        MongoClient mongo = new MongoClient("localhost", 27017);
         ArrayList<Page> result = new ArrayList<>();
         try {
-            MongoClient mongo = new MongoClient("localhost", 27017);
             MongoDatabase pages=mongo.getDatabase("pages");
             MongoCollection<Document> data=pages.getCollection(tag);
             FindIterable<Document> cursor = data.find();
@@ -49,8 +50,9 @@ public class PageDao {
                 //fix this
                 result.add(gson.fromJson(doc.toJson(),Page.class));
             }
-
+            mongo.close();
         } catch (Exception ex) {
+            mongo.close();
             ex.printStackTrace();
         }
         return result;

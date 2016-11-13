@@ -14,9 +14,9 @@ import java.util.ArrayList;
  */
 public class WordDao {
     public Word getWord(String word) {
+        MongoClient mongo = new MongoClient("localhost", 27017);
         Word res = new Word(word, new ArrayList<>());
         try {
-            MongoClient mongo = new MongoClient("localhost", 27017);
             MongoDatabase synonims = mongo.getDatabase("synonims");
             MongoCollection<Document> collection = synonims.getCollection("synonims");
             Document query = new Document();
@@ -24,16 +24,17 @@ public class WordDao {
             Document result = collection.find(query).first();
             Gson gson = new Gson();
             res = gson.fromJson(result.toJson(), Word.class);
-            mongo.close();
+            //    mongo.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        mongo.close();
         return res;
     }
 
     public void insert(Word word) {
+        MongoClient mongo = new MongoClient("localhost", 27017);
         try {
-            MongoClient mongo = new MongoClient("localhost", 27017);
             MongoDatabase synonyms = mongo.getDatabase("synonims");
             MongoCollection<Document> collection = synonyms.getCollection("synonims");
             Document document = new Document();
@@ -42,6 +43,7 @@ public class WordDao {
             collection.insertOne(document);
             mongo.close();
         } catch (Exception ex) {
+            mongo.close();
             ex.printStackTrace();
         }
     }
