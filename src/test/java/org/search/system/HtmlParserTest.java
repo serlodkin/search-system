@@ -39,10 +39,6 @@ public class HtmlParserTest extends TestCase {
         excepted.add("с");
         excepted.add("незнакомцем,случайная");
         excepted.add("беседа");
-
-
-
-
         assertEquals("Анонимный чат", parser.parse("https://anonimplace.com/").getTitle());
         assertEquals("https://anonimplace.com/", parser.parse("https://anonimplace.com/").getLink());
         assertEquals("Анонимный чат,разговор с незнакомцем,случайная беседа", parser.parse("https://anonimplace.com/").getDescription());
