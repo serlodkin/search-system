@@ -32,6 +32,8 @@ public class HtmlParserTest extends TestCase {
         excepted.add("поболтать");
         excepted.add("развлечение");
         excepted.add("досуг");
+        excepted.add("Анонимный");
+        excepted.add("чат");
 
 
         assertEquals("Анонимный чат", parser.parse("https://anonimplace.com/").getTitle());
@@ -39,7 +41,6 @@ public class HtmlParserTest extends TestCase {
         assertEquals("Анонимный чат,разговор с незнакомцем,случайная беседа", parser.parse("https://anonimplace.com/").getDescription());
         assertEquals(0, parser.parse("https://anonimplace.com/").getRang());
         assertEquals(excepted, parser.parse("https://anonimplace.com/").getTags());
-
     }
 
 

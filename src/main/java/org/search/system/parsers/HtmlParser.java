@@ -10,9 +10,7 @@ import org.search.system.models.Page;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class HtmlParser implements Parser{
     private String getMetaTag(Document document, String attr) {
@@ -46,11 +44,17 @@ public class HtmlParser implements Parser{
             if (keywords==null){
                 keywords="";
             }
-            ArrayList<String> tags= new ArrayList<>((Arrays.asList(keywords.split(",")))
+
+            ArrayList<String> titles = new ArrayList<>((Arrays.asList(title.split(" ")))
                                                                                         .stream()
                                                                                         .map(String::trim)
                                                                                         .collect(Collectors.toList()));
 
+            ArrayList<String> tags = new ArrayList<>((Arrays.asList(keywords.split(",")))
+                    .stream()
+                    .map(String::trim)
+                    .collect(Collectors.toList()));
+            tags.addAll(titles);
 
             return new Page(title,description,tags,url,0);
         } catch (IOException e) {
