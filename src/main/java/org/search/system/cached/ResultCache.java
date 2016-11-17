@@ -18,9 +18,7 @@ import java.util.concurrent.TimeUnit;
  * Created by Daniil on 14.11.2016.
  */
 public class ResultCache {
-    public LoadingCache<String, ArrayList<Page>> resultsCache;
-
-    {
+    public LoadingCache<String, ArrayList<Page>> resultsCache; {
         resultsCache = CacheBuilder.newBuilder()
                 .maximumSize(1000)
                 .expireAfterAccess(10, TimeUnit.HOURS)
