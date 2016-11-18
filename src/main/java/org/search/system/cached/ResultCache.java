@@ -14,12 +14,14 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 
+import static com.google.common.cache.CacheBuilder.newBuilder;
+
 /**
  * Created by Daniil on 14.11.2016.
  */
 public class ResultCache {
     public LoadingCache<String, ArrayList<Page>> resultsCache; {
-        resultsCache = CacheBuilder.newBuilder()
+        resultsCache = newBuilder()
                 .maximumSize(1000)
                 .expireAfterAccess(10, TimeUnit.HOURS)
                 .build(new CacheLoader<String, ArrayList<Page>>() {
