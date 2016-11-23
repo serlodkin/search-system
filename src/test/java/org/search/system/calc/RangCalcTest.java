@@ -8,6 +8,6 @@ import junit.framework.TestCase;
 public class RangCalcTest  extends TestCase {
     public void testCalc() throws Exception {
         RangCalc calc=new RangCalc();
-       assertEquals(2,calc.calc("testtest","test"));
+       assertEquals(2,calc.calc("test test","test"));
     }
 }

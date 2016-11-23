@@ -7,6 +7,8 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class RangCalc {
     public long calc(String keyword,String description){
-        return (long) StringUtils.countMatches(keyword,description);
+        long count=StringUtils.countMatches(keyword,description);
+        long words=description.split(" ").length;
+        return (long) count/words;
     }
 }
