@@ -1,6 +1,5 @@
 package org.search.system.cached;
 
-import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import org.search.system.dao.PageDao;
