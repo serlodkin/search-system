@@ -10,6 +10,7 @@ import org.search.system.models.Page;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class HtmlParser implements Parser{
@@ -20,11 +21,7 @@ public class HtmlParser implements Parser{
             if (s != null) return s;
         }
         elements = document.select("meta[property=" + attr + "]");
-        for (Element element : elements) {
-            final String s = element.attr("content");
-            if (s != null) return s;
-        }
-        return null;
+        return elements.stream().map(element -> element.attr("content")).filter(Objects::nonNull).findFirst().orElse(null);
     }
 
     @Override
