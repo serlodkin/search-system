@@ -43,7 +43,7 @@ public class HtmlParser implements Parser{
             }
 
             ArrayList<String> titles = new ArrayList<>((Arrays.asList(title.split(" ")))
-                    .stream()
+                                                                                        .stream()
                                                                                         .map(String::trim)
                                                                                         .collect(Collectors.toList()));
             ArrayList<String> descriptions = new ArrayList<>((Arrays.asList(description.split(" ")))
