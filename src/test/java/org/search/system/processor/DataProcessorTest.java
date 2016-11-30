@@ -1,6 +1,7 @@
 package org.search.system.processor;
 
 import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Test;
 import org.search.system.models.Page;
 import org.search.system.models.Word;
@@ -12,7 +13,7 @@ import java.util.HashSet;
 /**
  * Created by Daniil Matkov on 04.11.16.
  */
-public class DataProcessorTest extends TestCase {
+public class DataProcessorTest {
     @Test
     public void testProcess() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();
@@ -35,11 +36,11 @@ public class DataProcessorTest extends TestCase {
         d.add(new Word("Data", new ArrayList<>()));
         d.add(new Word("Test", new ArrayList<>()));
         ArrayList<Page> result = dataProcessor.process(test, d);
-        assertEquals(result.size(), 1);
-        assertEquals("Test", result.get(0).getTitle());
-        assertEquals(0, result.get(0).getRang());
-        assertEquals("Test", result.get(0).getDescription());
-        assertEquals("http://example.com", result.get(0).getLink());
+        Assert.assertEquals(result.size(), 1);
+        Assert.assertEquals("Test", result.get(0).getTitle());
+        Assert.assertEquals(0, result.get(0).getRang());
+        Assert.assertEquals("Test", result.get(0).getDescription());
+        Assert.assertEquals("http://example.com", result.get(0).getLink());
     }
     @Test
     public void testProcess1() throws Exception {
@@ -58,17 +59,17 @@ public class DataProcessorTest extends TestCase {
         ArrayList<Word> d = new ArrayList<>();
         d.add(new Word("Data", new ArrayList<>()));
         ArrayList<Page> result = dataProcessor.process(test, d);
-        assertEquals(result.size(), 2);
+        Assert.assertEquals(result.size(), 2);
 
-        assertEquals("http://example.com", result.get(0).getLink());
-        assertEquals("Data", result.get(0).getTitle());
-        assertEquals("Test", result.get(0).getDescription());
-        assertEquals(0, result.get(0).getRang());
+        Assert.assertEquals("http://example.com", result.get(0).getLink());
+        Assert.assertEquals("Data", result.get(0).getTitle());
+        Assert.assertEquals("Test", result.get(0).getDescription());
+        Assert.assertEquals(0, result.get(0).getRang());
 
-        assertEquals("http://example.com", result.get(1).getLink());
-        assertEquals("Test", result.get(1).getTitle());
-        assertEquals("Data", result.get(1).getDescription());
-        assertEquals(0, result.get(1).getRang());
+        Assert.assertEquals("http://example.com", result.get(1).getLink());
+        Assert.assertEquals("Test", result.get(1).getTitle());
+        Assert.assertEquals("Data", result.get(1).getDescription());
+        Assert.assertEquals(0, result.get(1).getRang());
 
     }
     @Test
@@ -77,7 +78,7 @@ public class DataProcessorTest extends TestCase {
         HashMap<String, HashSet<Page>> test = new HashMap<>();
         ArrayList<Word> d = new ArrayList<>();
         ArrayList<Page> result = dataProcessor.process(test, d);
-        assertEquals(0, result.size());
+        Assert.assertEquals(0, result.size());
     }
 
 }
