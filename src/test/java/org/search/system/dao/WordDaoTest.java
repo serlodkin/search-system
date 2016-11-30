@@ -2,6 +2,7 @@ package org.search.system.dao;
 
 import junit.framework.TestCase;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.search.system.models.Word;
 
@@ -20,7 +21,7 @@ public class WordDaoTest extends TestCase {
         wordDao.insert(new Word("test", synonims));
     }
 
-    @Before
+    @BeforeClass
     public void init() {
         WordDao wordDao = new WordDao();
         ArrayList<String> synonims = new ArrayList<>();

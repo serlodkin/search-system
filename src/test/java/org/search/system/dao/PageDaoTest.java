@@ -2,6 +2,7 @@ package org.search.system.dao;
 
 import junit.framework.TestCase;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.search.system.models.Page;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PageDaoTest extends TestCase {
-    @Before
+    @BeforeClass
     public void init() {
         PageDao pageDao = new PageDao();
         ArrayList<String> test = new ArrayList<>();
