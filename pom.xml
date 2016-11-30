@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.search</groupId>
     <artifactId>search</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.01-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>search-system</name>
 
