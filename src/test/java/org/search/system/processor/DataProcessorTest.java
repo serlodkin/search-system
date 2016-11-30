@@ -1,6 +1,7 @@
 package org.search.system.processor;
 
 import junit.framework.TestCase;
+import org.junit.Test;
 import org.search.system.models.Page;
 import org.search.system.models.Word;
 
@@ -12,6 +13,7 @@ import java.util.HashSet;
  * Created by Daniil Matkov on 04.11.16.
  */
 public class DataProcessorTest extends TestCase {
+    @Test
     public void testProcess() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();
         HashMap<String, HashSet<Page>> test = new HashMap<>();
@@ -39,7 +41,7 @@ public class DataProcessorTest extends TestCase {
         assertEquals("Test", result.get(0).getDescription());
         assertEquals("http://example.com", result.get(0).getLink());
     }
-
+    @Test
     public void testProcess1() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();
         HashMap<String, HashSet<Page>> test = new HashMap<>();
@@ -69,7 +71,7 @@ public class DataProcessorTest extends TestCase {
         assertEquals(0, result.get(1).getRang());
 
     }
-
+    @Test
     public void testProcess2() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();
         HashMap<String, HashSet<Page>> test = new HashMap<>();
