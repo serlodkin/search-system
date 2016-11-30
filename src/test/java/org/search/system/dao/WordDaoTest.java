@@ -21,8 +21,8 @@ public class WordDaoTest extends TestCase {
         wordDao.insert(new Word("test", synonims));
     }
 
-    @Override
-    public void setUp() throws Exception {
+    @BeforeClass
+    public void setUp() {
         WordDao wordDao = new WordDao();
         ArrayList<String> synonims = new ArrayList<>();
         synonims.add("statistics");
