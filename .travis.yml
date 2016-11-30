@@ -4,4 +4,3 @@ jdk:
 services: mongodb
 
 sudo: false
-script: mvn clean verify
