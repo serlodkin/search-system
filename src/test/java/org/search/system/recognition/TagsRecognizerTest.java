@@ -9,14 +9,17 @@ import org.search.system.models.Word;
 import java.util.ArrayList;
 
 public class TagsRecognizerTest extends TestCase {
-    @BeforeClass
-    public void init(){
+
+    @Override
+    public void setUp() throws Exception {
         WordDao wordDao = new WordDao();
         ArrayList<String> synonims = new ArrayList<>();
-        synonims.add("statistics");
+        synonims.add("statistics")  ;
         synonims.add("documents");
         wordDao.insert(new Word("data", synonims));
+        super.setUp();
     }
+
     @Test
     public void testRecognize() throws Exception {
         TagsRecognizer t = new TagsRecognizer();

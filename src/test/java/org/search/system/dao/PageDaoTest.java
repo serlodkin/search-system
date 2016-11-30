@@ -10,14 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PageDaoTest extends TestCase {
-    @BeforeClass
-    public void init() {
+    @Override
+    public void setUp() throws Exception {
         PageDao pageDao = new PageDao();
         ArrayList<String> test = new ArrayList<>();
         test.add("test");
         test.add("tests");
         test.add("testing");
         pageDao.insert(new Page("Test", "test test", test, "http://example.com", 0));
+        super.setUp();
+
     }
     @Test
     public void testInsert() throws Exception {
