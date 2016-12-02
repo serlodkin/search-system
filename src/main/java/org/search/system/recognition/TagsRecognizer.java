@@ -10,6 +10,11 @@ import java.util.stream.Collectors;
 
 
 public class TagsRecognizer implements Recognizer {
+    /**
+     * Recognizes all keywords form user request
+     * @param request user request
+     * @return list of {@link Word} which contains all keywords that are synonym to user request
+     */
     @Override
     public ArrayList<Word> recognize(String request) {
         ArrayList<String> words = new ArrayList<>((Arrays.asList(request.split(",")))
