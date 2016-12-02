@@ -6,6 +6,10 @@ import java.util.ArrayList;
 
 
 public class SynonimProvider {
+    /**Provides all synonyms to given from database
+     * @param word to find synonyms
+     * @return List of synonyms to given word
+     */
     public ArrayList<String> getSynonymsFromDB(String word) {
         WordDao wordDao = new WordDao();
         return wordDao.getWord(word).getSynonims();

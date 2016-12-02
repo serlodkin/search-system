@@ -24,6 +24,11 @@ public class HtmlParser implements Parser{
         return elements.stream().map(element -> element.attr("content")).filter(Objects::nonNull).findFirst().orElse(null);
     }
 
+    /**
+     * Parses web page meta info,find title,metaTags,description
+     * @param url web page url
+     * @return {@link Page} object which contains main info about given page
+     */
     @Override
     public Page parse(String url) {
         Document doc;
