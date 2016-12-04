@@ -1,7 +1,6 @@
 package org.search.system.dao;
 
 import junit.framework.TestCase;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.search.system.models.Word;
@@ -39,7 +38,7 @@ public class WordDaoTest extends TestCase {
         Word excepted = new Word("data", synonims);
         Word result = wordDao.getWord("data");
         assertEquals(excepted.getWord(), result.getWord());
-        assertEquals(excepted.getSynonims(), result.getSynonims());
+        assertEquals(excepted.getSynonyms(), result.getSynonyms());
     }
 
 }

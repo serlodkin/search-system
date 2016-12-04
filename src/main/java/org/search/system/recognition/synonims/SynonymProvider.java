@@ -12,7 +12,7 @@ public class SynonymProvider {
      */
     public ArrayList<String> getSynonymsFromDB(String word) {
         WordDao wordDao = new WordDao();
-        return wordDao.getWord(word).getSynonims();
+        return wordDao.getWord(word).getSynonyms();
     }
 
 }

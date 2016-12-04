@@ -1,7 +1,6 @@
 package org.search.system.recognition;
 
 import junit.framework.TestCase;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.search.system.dao.WordDao;
 import org.search.system.models.Word;
@@ -27,7 +26,7 @@ public class TagsRecognizerTest extends TestCase {
         synonims.add("statistics");
         synonims.add("documents");
         assertEquals("data", t.recognize("data").get(0).getWord());
-        assertEquals(synonims, t.recognize("data").get(0).getSynonims());
+        assertEquals(synonims, t.recognize("data").get(0).getSynonyms());
     }
 
 }

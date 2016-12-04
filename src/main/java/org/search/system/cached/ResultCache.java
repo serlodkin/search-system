@@ -34,8 +34,8 @@ public class ResultCache {
                         for (Word tag : tags) {
                             temp.addAll(pageDao.getPages(tag.getWord()));
 
-                            for (String synonim : tag.getSynonims()) {
-                                temp.addAll(pageDao.getPages(synonim));
+                            for (String synonym : tag.getSynonyms()) {
+                                temp.addAll(pageDao.getPages(synonym));
                             }
                             resultByTag.put(tag.getWord(), (HashSet<Page>) temp.clone());
                             temp.clear();

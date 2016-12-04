@@ -38,7 +38,7 @@ public class WordDao {
             MongoCollection<Document> collection = synonyms.getCollection("synonims");
             Document document = new Document();
             document.put("word", word.getWord());
-            document.put("synonims", word.getSynonims());
+            document.put("synonims", word.getSynonyms());
             collection.insertOne(document);
             mongo.close();
         } catch (Exception ex) {
