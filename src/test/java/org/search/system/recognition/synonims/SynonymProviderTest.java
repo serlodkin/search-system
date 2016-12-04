@@ -7,10 +7,10 @@ import java.util.ArrayList;
 public class SynonymProviderTest extends TestCase {
     public void testGetSynonymsFromDB() throws Exception {
         SynonymProvider synonymProvider = new SynonymProvider();
-        ArrayList<String> synonims = new ArrayList<>();
-        synonims.add("statistics");
-        synonims.add("documents");
-        assertEquals(synonims, synonymProvider.getSynonymsFromDB("data"));
+        ArrayList<String> synonyms = new ArrayList<>();
+        synonyms.add("statistics");
+        synonyms.add("documents");
+        assertEquals(synonyms, synonymProvider.getSynonymsFromDB("data"));
     }
 
 }

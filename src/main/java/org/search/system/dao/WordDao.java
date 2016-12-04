@@ -17,8 +17,8 @@ public class WordDao {
         MongoClient mongo = new MongoClient("localhost", 27017);
         Word res = new Word(word, new ArrayList<>());
         try {
-            MongoDatabase synonims = mongo.getDatabase("synonims");
-            MongoCollection<Document> collection = synonims.getCollection("synonims");
+            MongoDatabase synonims = mongo.getDatabase("synonyms");
+            MongoCollection<Document> collection = synonims.getCollection("synonyms");
             Document query = new Document();
             query.put("word", word);
             Document result = collection.find(query).first();
@@ -34,11 +34,11 @@ public class WordDao {
     public void insert(Word word) {
         MongoClient mongo = new MongoClient("localhost", 27017);
         try {
-            MongoDatabase synonyms = mongo.getDatabase("synonims");
-            MongoCollection<Document> collection = synonyms.getCollection("synonims");
+            MongoDatabase synonyms = mongo.getDatabase("synonyms");
+            MongoCollection<Document> collection = synonyms.getCollection("synonyms");
             Document document = new Document();
             document.put("word", word.getWord());
-            document.put("synonims", word.getSynonyms());
+            document.put("synonyms", word.getSynonyms());
             collection.insertOne(document);
             mongo.close();
         } catch (Exception ex) {

@@ -14,29 +14,29 @@ public class WordDaoTest extends TestCase {
     @Test
     public void testInsert() throws Exception {
         WordDao wordDao = new WordDao();
-        ArrayList<String> synonims = new ArrayList<>();
-        synonims.add("testing");
-        synonims.add("tests");
-        wordDao.insert(new Word("test", synonims));
+        ArrayList<String> synonyms = new ArrayList<>();
+        synonyms.add("testing");
+        synonyms.add("tests");
+        wordDao.insert(new Word("test", synonyms));
     }
 
     @BeforeClass
     @Override
     public void setUp() {
         WordDao wordDao = new WordDao();
-        ArrayList<String> synonims = new ArrayList<>();
-        synonims.add("statistics");
-        synonims.add("documents");
-        wordDao.insert(new Word("data", synonims));
+        ArrayList<String> synonyms = new ArrayList<>();
+        synonyms.add("statistics");
+        synonyms.add("documents");
+        wordDao.insert(new Word("data", synonyms));
     }
 
     @Test
     public void testGetWord() throws Exception {
         WordDao wordDao = new WordDao();
-        ArrayList<String> synonims = new ArrayList<>();
-        synonims.add("statistics");
-        synonims.add("documents");
-        Word excepted = new Word("data", synonims);
+        ArrayList<String> synonyms = new ArrayList<>();
+        synonyms.add("statistics");
+        synonyms.add("documents");
+        Word excepted = new Word("data", synonyms);
         Word result = wordDao.getWord("data");
         assertEquals(excepted.getWord(), result.getWord());
         assertEquals(excepted.getSynonyms(), result.getSynonyms());

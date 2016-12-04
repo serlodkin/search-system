@@ -12,21 +12,21 @@ public class TagsRecognizerTest extends TestCase {
     @Override
     public void setUp() throws Exception {
         WordDao wordDao = new WordDao();
-        ArrayList<String> synonims = new ArrayList<>();
-        synonims.add("statistics")  ;
-        synonims.add("documents");
-        wordDao.insert(new Word("data", synonims));
+        ArrayList<String> synonyms = new ArrayList<>();
+        synonyms.add("statistics");
+        synonyms.add("documents");
+        wordDao.insert(new Word("data", synonyms));
         super.setUp();
     }
 
     @Test
     public void testRecognize() throws Exception {
-        TagsRecognizer t = new TagsRecognizer();
-        ArrayList<String> synonims = new ArrayList<>();
-        synonims.add("statistics");
-        synonims.add("documents");
-        assertEquals("data", t.recognize("data").get(0).getWord());
-        assertEquals(synonims, t.recognize("data").get(0).getSynonyms());
+        TagsRecognizer tagsRecognizer = new TagsRecognizer();
+        ArrayList<String> synonyms = new ArrayList<>();
+        synonyms.add("statistics");
+        synonyms.add("documents");
+        assertEquals("data", tagsRecognizer.recognize("data").get(0).getWord());
+        assertEquals(synonyms, tagsRecognizer.recognize("data").get(0).getSynonyms());
     }
 
 }
