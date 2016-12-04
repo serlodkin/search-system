@@ -21,6 +21,7 @@ public class WordDaoTest extends TestCase {
     }
 
     @BeforeClass
+    @Override
     public void setUp() {
         WordDao wordDao = new WordDao();
         ArrayList<String> synonims = new ArrayList<>();
