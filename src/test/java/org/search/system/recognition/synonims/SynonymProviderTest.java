@@ -4,13 +4,13 @@ import junit.framework.TestCase;
 
 import java.util.ArrayList;
 
-public class SynonimProviderTest extends TestCase {
+public class SynonymProviderTest extends TestCase {
     public void testGetSynonymsFromDB() throws Exception {
-        SynonimProvider synonimProvider = new SynonimProvider();
+        SynonymProvider synonymProvider = new SynonymProvider();
         ArrayList<String> synonims = new ArrayList<>();
         synonims.add("statistics");
         synonims.add("documents");
-        assertEquals(synonims, synonimProvider.getSynonymsFromDB("data"));
+        assertEquals(synonims, synonymProvider.getSynonymsFromDB("data"));
     }
 
 }

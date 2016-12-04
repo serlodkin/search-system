@@ -5,7 +5,7 @@ import org.search.system.dao.WordDao;
 import java.util.ArrayList;
 
 
-public class SynonimProvider {
+public class SynonymProvider {
     /**Provides all synonyms to given from database
      * @param word to find synonyms
      * @return List of synonyms to given word

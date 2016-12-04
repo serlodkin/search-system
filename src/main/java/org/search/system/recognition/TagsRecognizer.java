@@ -2,7 +2,7 @@ package org.search.system.recognition;
 
 import org.search.system.interfaces.Recognizer;
 import org.search.system.models.Word;
-import org.search.system.recognition.synonims.SynonimProvider;
+import org.search.system.recognition.synonims.SynonymProvider;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,8 +23,8 @@ public class TagsRecognizer implements Recognizer {
                 .map(String::trim)
                 .collect(Collectors.toList()));
         ArrayList<Word> keywords = new ArrayList<>();
-        SynonimProvider synonimProvider = new SynonimProvider();
-        keywords.addAll(words.stream().map(word -> new Word(word, synonimProvider.getSynonymsFromDB(word))).collect(Collectors.toList()));
+        SynonymProvider synonymProvider = new SynonymProvider();
+        keywords.addAll(words.stream().map(word -> new Word(word, synonymProvider.getSynonymsFromDB(word))).collect(Collectors.toList()));
         return keywords;
     }
 }

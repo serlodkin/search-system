@@ -24,7 +24,6 @@ public class WordDao {
             Document result = collection.find(query).first();
             Gson gson = new Gson();
             res = gson.fromJson(result.toJson(), Word.class);
-            //    mongo.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
