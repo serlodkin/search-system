@@ -27,13 +27,27 @@
     </style>
 </head>
 <body>
-    <form  style="width:400px;margin-left: auto; margin-right:auto;" action="result.action">
-        <input name="searchQuery" id="searchQuery">
-        <input type="submit" class="btn btn-success">
-    </form>
-
 
     <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+                  <!-- Search Form -->
+                  <form role="form" action="result.action">
+                     <!-- Search Field -->
+                     <div class="row">
+                        <h1 class="text-center">Search</h1>
+                        <div class="form-group">
+                           <div class="input-group">
+                              <input class="form-control" type="text"  name="searchQuery" id="searchQuery" placeholder="Search" required/>
+                              <span class="input-group-btn">
+                              <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"><span style="margin-left:10px;">Search</span></button>
+                              </span>
+                              </span>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+                  <!-- End of Search Form -->
+               </div>
 
         <hgroup class="mb20">
             <h1>Search Results</h1>
