@@ -2,6 +2,9 @@ package org.search.system.models;
 
 import java.util.List;
 
+/**
+ * Class which contains main info about html page
+ */
 public class Page {
     private String title;
     private String description;
