@@ -3,7 +3,7 @@ package org.search.system.models;
 import java.util.ArrayList;
 
 /**
- * Created by Daniil on 04.12.2016.
+ * user model.
  */
 public class User {
     private String address;
