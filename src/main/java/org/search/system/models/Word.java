@@ -3,6 +3,9 @@ package org.search.system.models;
 
 import java.util.ArrayList;
 
+/**
+ * Class stores word itself with synonyms
+ */
 public class Word {
     private String word;
     private ArrayList<String> synonyms;
