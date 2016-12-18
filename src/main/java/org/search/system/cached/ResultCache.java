@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 import static com.google.common.cache.CacheBuilder.newBuilder;
 
 /**
- * Created by Daniil on 14.11.2016.
+ * Class caching searchQuery->result
  */
 public class ResultCache {
     public LoadingCache<String, ArrayList<Page>> resultsCache; {

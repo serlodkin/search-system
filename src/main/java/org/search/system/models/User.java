@@ -45,4 +45,12 @@ public class User {
     public void clearHistory() {
         history.clear();
     }
+
+    public void deleteHistory(String toDelete) {
+        history.remove(toDelete);
+    }
+
+    public void deleteHistory(int toDelete) {
+        history.remove(toDelete);
+    }
 }
