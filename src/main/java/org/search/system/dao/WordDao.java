@@ -17,8 +17,8 @@ public class WordDao {
         MongoClient mongo = new MongoClient("localhost", 27017);
         Word res = new Word(word, new ArrayList<>());
         try {
-            MongoDatabase synonims = mongo.getDatabase("synonyms");
-            MongoCollection<Document> collection = synonims.getCollection("synonyms");
+            MongoDatabase synonyms = mongo.getDatabase("synonyms");
+            MongoCollection<Document> collection = synonyms.getCollection("synonyms");
             Document query = new Document();
             query.put("word", word);
             Document result = collection.find(query).first();
