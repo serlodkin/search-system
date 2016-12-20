@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * user model.
  */
 public class User {
+    private String id;
     private String address;
     private String country;
     private String language;
@@ -52,5 +53,13 @@ public class User {
 
     public void deleteHistory(int toDelete) {
         history.remove(toDelete);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
