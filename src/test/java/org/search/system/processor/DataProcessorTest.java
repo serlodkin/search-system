@@ -59,7 +59,6 @@ public class DataProcessorTest {
         d.add(new Word("Data", new ArrayList<>()));
         ArrayList<Page> result = dataProcessor.process(test, d);
         Assert.assertEquals(result.size(), 2);
-
         Assert.assertEquals("http://example.com", result.get(0).getLink());
         Assert.assertEquals("Data", result.get(0).getTitle());
         Assert.assertEquals("Test", result.get(0).getDescription());
