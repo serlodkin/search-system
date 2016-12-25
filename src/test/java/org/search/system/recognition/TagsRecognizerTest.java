@@ -11,6 +11,7 @@ public class TagsRecognizerTest extends TestCase {
 
     @Override
     public void setUp() throws Exception {
+        super.setUp();
         WordDao wordDao = new WordDao();
         ArrayList<String> synonyms = new ArrayList<>();
         synonyms.add("statistics");
