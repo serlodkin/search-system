@@ -17,7 +17,6 @@ public class TagsRecognizerTest extends TestCase {
         synonyms.add("statistics");
         synonyms.add("documents");
         wordDao.insert(new Word("data", synonyms));
-        super.setUp();
     }
 
     @Test
