@@ -13,7 +13,7 @@
                <div class="input-group">
                   <input class="form-control" type="text"  name="url" id="url" placeholder="Add" required/>
                   <span class="input-group-btn">
-                  <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"><span style="margin-left:10px;">Add</span></button>
+                  <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"><span style="margin-left:10px;">Add</span></button>
                   </span>
                   </span>
                </div>
