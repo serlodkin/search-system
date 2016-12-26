@@ -2,7 +2,6 @@ package org.search.system.cached;
 
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import org.search.system.dao.PageDao;
 import org.search.system.models.Page;
 import org.search.system.models.Word;
 import org.search.system.processor.DataProcessor;
@@ -28,13 +27,11 @@ public class ResultCache {
                         TagsRecognizer recognizer = new TagsRecognizer();
                         ArrayList<Word> tags = recognizer.recognize(searchQuery);
                         HashMap<String, HashSet<Page>> resultByTag = new HashMap<>();
-                        PageDao pageDao = new PageDao();
                         HashSet<Page> temp = new HashSet<>();
                         for (Word tag : tags) {
-                            temp.addAll(pageDao.getPages(tag.getWord()));
-
+                            temp.addAll(PageCache.pageCache.get(tag.getWord()));
                             for (String synonym : tag.getSynonyms()) {
-                                temp.addAll(pageDao.getPages(synonym));
+                                temp.addAll(PageCache.pageCache.get(synonym));
                             }
                             resultByTag.put(tag.getWord(), (HashSet<Page>) temp.clone());
                             temp.clear();

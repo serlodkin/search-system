@@ -21,9 +21,8 @@ public class ResultAction extends ActionSupport{
     @Override
     public String execute() {
         result = new ArrayList<>();
-        ResultCache cache = new ResultCache();
         try {
-            result = cache.resultsCache.get(searchQuery);
+            result = ResultCache.resultsCache.get(searchQuery);
         } catch (ExecutionException e) {
             e.printStackTrace();
         }

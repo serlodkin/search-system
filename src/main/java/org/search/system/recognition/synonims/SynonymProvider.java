@@ -1,8 +1,9 @@
 package org.search.system.recognition.synonims;
 
-import org.search.system.dao.WordDao;
+import org.search.system.cached.WordCache;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 
 public class SynonymProvider {
@@ -11,8 +12,11 @@ public class SynonymProvider {
      * @return List of synonyms to given word
      */
     public ArrayList<String> getSynonymsFromDB(String word) {
-        WordDao wordDao = new WordDao();
-        return wordDao.getWord(word).getSynonyms();
+        try {
+            return WordCache.wordCache.get(word).getSynonyms();
+        } catch (ExecutionException e) {
+            return new ArrayList<String>();
+        }
     }
 
 }
