@@ -49,7 +49,7 @@
                   <!-- End of Search Form -->
                </div>
 
-        <hgroup class="mb20">
+        <hgroup class="col-sm-12 mb20">
             <h1>Search Results</h1>
             <h2 class="lead"><strong class="text-danger"><s:property value="%{result.size}"/> </strong> results were found for the search for <strong class="text-danger"><s:property value="%{searchQuery}"/></strong></h2>
         </hgroup>
