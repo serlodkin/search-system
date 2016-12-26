@@ -5,7 +5,6 @@ import com.google.common.cache.LoadingCache;
 import org.search.system.models.Page;
 import org.search.system.models.Word;
 import org.search.system.processor.DataProcessor;
-import org.search.system.recognition.TagsRecognizer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,8 +23,7 @@ public class ResultCache {
                 .build(new CacheLoader<String, ArrayList<Page>>() {
                     @Override
                     public ArrayList<Page> load(String searchQuery) throws Exception {
-                        TagsRecognizer recognizer = new TagsRecognizer();
-                        ArrayList<Word> tags = recognizer.recognize(searchQuery);
+                        ArrayList<Word> tags = TagsRecognizerCache.tagsCache.get(searchQuery);
                         HashMap<String, HashSet<Page>> resultByTag = new HashMap<>();
                         HashSet<Page> temp = new HashSet<>();
                         for (Word tag : tags) {
