@@ -32,7 +32,6 @@ public class PageDaoTest extends TestCase {
         assertEquals(excepted.getTags(), result.getTags());
         assertEquals(excepted.getRang(), result.getRang());
         assertEquals(excepted.getTitle(), result.getTitle());
-
     }
     @Test
     public void testGetPages() throws Exception {
