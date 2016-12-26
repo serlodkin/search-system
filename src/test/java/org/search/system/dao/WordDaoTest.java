@@ -16,7 +16,12 @@ public class WordDaoTest extends TestCase {
         ArrayList<String> synonyms = new ArrayList<>();
         synonyms.add("testing");
         synonyms.add("tests");
-        wordDao.insert(new Word("test", synonyms));
+        Word excepted = new Word("test", synonyms);
+        wordDao.insert(excepted);
+        Word result = wordDao.getWord("test");
+        assertEquals(excepted.getWord(), result.getWord());
+        assertEquals(excepted.getSynonyms(), result.getSynonyms());
+
     }
 
     @Override

@@ -19,10 +19,7 @@ import static com.google.common.cache.CacheBuilder.newBuilder;
  * Class caching searchQuery->result
  */
 public class ResultCache {
-    public static LoadingCache<String, ArrayList<Page>> resultsCache;
-
-    {
-        resultsCache = newBuilder()
+    public static LoadingCache<String, ArrayList<Page>> resultsCache = newBuilder()
                 .maximumSize(1000)
                 .expireAfterAccess(10, TimeUnit.HOURS)
                 .build(new CacheLoader<String, ArrayList<Page>>() {
@@ -47,5 +44,5 @@ public class ResultCache {
                         return dataProcessor.process(resultByTag, tags);
                     }
                 });
-    }
 }
+

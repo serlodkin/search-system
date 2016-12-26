@@ -10,14 +10,13 @@ import java.util.List;
 public class PageDaoTest extends TestCase {
     @Override
     public void setUp() throws Exception {
+        super.setUp();
         PageDao pageDao = new PageDao();
         ArrayList<String> test = new ArrayList<>();
         test.add("test");
         test.add("tests");
         test.add("testing");
         pageDao.insert(new Page("Test", "test test", test, "http://example.com", 0));
-        super.setUp();
-
     }
     @Test
     public void testInsert() throws Exception {
@@ -25,7 +24,14 @@ public class PageDaoTest extends TestCase {
         ArrayList<String> test = new ArrayList<>();
         test.add("data");
         test.add("Data");
-        pageDao.insert(new Page("Data", "data", test, "http://example.com", 0));
+        Page excepted = new Page("Data", "data", test, "http://example.com", 0);
+        pageDao.insert(excepted);
+        Page result = pageDao.getPages("data").get(0);
+        assertEquals(excepted.getDescription(), result.getDescription());
+        assertEquals(excepted.getLink(), result.getLink());
+        assertEquals(excepted.getTags(), result.getTags());
+        assertEquals(excepted.getRang(), result.getRang());
+        assertEquals(excepted.getTitle(), result.getTitle());
 
     }
     @Test
