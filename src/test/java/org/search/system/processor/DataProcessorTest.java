@@ -49,7 +49,6 @@ public class DataProcessorTest {
         ArrayList<String> synonims = new ArrayList<>();
         synonims.add("statistics");
         synonims.add("documents");
-        Page t = new Page("Test", "Test", synonims, "http://example.com", 0);
         Page t1 = new Page("Test", "Data", synonims, "http://example.com", 0);
         Page t2 = new Page("Data", "Test", synonims, "http://example.com", 0);
         first.add(t1);
