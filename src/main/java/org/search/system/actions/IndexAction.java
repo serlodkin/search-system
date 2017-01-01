@@ -27,7 +27,6 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * Index action
- *
  * @author Daniil Matkov
  */
 public class IndexAction extends ActionSupport{

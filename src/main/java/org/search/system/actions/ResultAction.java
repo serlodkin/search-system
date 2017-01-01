@@ -24,9 +24,14 @@ SOFTWARE.
 package org.search.system.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
 import org.search.system.cached.ResultCache;
 import org.search.system.models.Page;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -35,9 +40,11 @@ import java.util.concurrent.ExecutionException;
  *
  * @author Daniil Matkov
  */
-public class ResultAction extends ActionSupport{
+public class ResultAction extends ActionSupport implements ServletResponseAware, ServletRequestAware {
     private String searchQuery;
     private ArrayList<Page> result;
+    private HttpServletResponse servletResponse;
+    private HttpServletRequest servletRequest;
 
     public String getSearchQuery() {
         return searchQuery;
@@ -49,6 +56,18 @@ public class ResultAction extends ActionSupport{
 
     @Override
     public String execute() {
+        Cookie history = null;
+        for (Cookie cookie : servletRequest.getCookies()) {
+            if (cookie.getName().equals("history")) {
+                history = cookie;
+            }
+
+        }
+        if (history == null) {
+            history = new Cookie("history", "");
+        }
+        history.setValue(history.getValue() + '|' + searchQuery);
+        servletResponse.addCookie(history);
         result = new ArrayList<>();
         try {
             result = ResultCache.resultsCache.get(searchQuery);
@@ -66,5 +85,15 @@ public class ResultAction extends ActionSupport{
 
     public void setResult(ArrayList<Page> result) {
         this.result = result;
+    }
+
+    @Override
+    public void setServletRequest(HttpServletRequest httpServletRequest) {
+        this.servletRequest = httpServletRequest;
+    }
+
+    @Override
+    public void setServletResponse(HttpServletResponse httpServletResponse) {
+        this.servletResponse = servletResponse;
     }
 }
