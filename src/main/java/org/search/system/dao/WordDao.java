@@ -39,7 +39,7 @@ import java.util.ArrayList;
  */
 public class WordDao {
 
-    private static final int PORT = 27010;
+    private static final int PORT = 27017;
 
     public Word getWord(String word) {
         MongoClient mongo = new MongoClient("localhost", PORT);
