@@ -38,7 +38,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 
-/**
+/*
  * Parser web page
  * implements {@link Parser}
  *

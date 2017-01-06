@@ -29,13 +29,14 @@ import org.search.system.cached.WordCache;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-/**
+/*
  * Provides all synonyms of keyword
  *
  * @author Daniil Matkov
  */
 public class SynonymProvider {
-    /**Provides all synonyms to given from database
+    /*
+     *Provides all synonyms to given from database
      * @param word to find synonyms
      * @return {@link ArrayList<String>} of synonyms to given word
      */

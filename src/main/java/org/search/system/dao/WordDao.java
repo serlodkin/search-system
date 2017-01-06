@@ -23,6 +23,7 @@ SOFTWARE.
  */
 
 package org.search.system.dao;
+
 import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -37,8 +38,11 @@ import java.util.ArrayList;
  * @author Daniil Matkov
  */
 public class WordDao {
+
+    private static final int PORT = 27010;
+
     public Word getWord(String word) {
-        MongoClient mongo = new MongoClient("localhost", 27017);
+        MongoClient mongo = new MongoClient("localhost", PORT);
         Word res = new Word(word, new ArrayList<>());
         try {
             MongoDatabase synonyms = mongo.getDatabase("synonyms");

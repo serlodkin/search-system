@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/**
+/*
  * Processes data from diffrent tag search results
  * @author Daniil Matkov
  */
@@ -39,7 +39,7 @@ public class DataProcessor {
     /**
      * @param tagResult {@link HashMap} of keyword to search results for this keyword
      * @param tags      {@link ArrayList} of {@link Word} all keywords from user request
-     * @return {@link ArrayList<Page>} contains Pages which v
+     * @return {@link ArrayList} contains {@link Page} which v
      */
 
     public ArrayList<Page> process(HashMap<String, HashSet<Page>> tagResult, ArrayList<Word> tags) {

@@ -13,6 +13,7 @@ import java.util.HashSet;
  * Created by Daniil Matkov on 04.11.16.
  */
 public class DataProcessorTest {
+
     @Test
     public void testProcess() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();
@@ -41,6 +42,7 @@ public class DataProcessorTest {
         Assert.assertEquals("Test", result.get(0).getDescription());
         Assert.assertEquals("http://example.com", result.get(0).getLink());
     }
+
     @Test
     public void testProcess1() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();
@@ -68,6 +70,7 @@ public class DataProcessorTest {
         Assert.assertEquals(0, result.get(1).getRang());
 
     }
+
     @Test
     public void testProcess2() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();

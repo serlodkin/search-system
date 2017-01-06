@@ -26,7 +26,7 @@ package org.search.system.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
+/*
  * Action
  * @author Daniil Matkov
  */

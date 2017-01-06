@@ -18,6 +18,7 @@ public class PageDaoTest extends TestCase {
         test.add("testing");
         pageDao.insert(new Page("Test", "test test", test, "http://example.com", 0));
     }
+
     @Test
     public void testInsert() throws Exception {
         PageDao pageDao = new PageDao();
@@ -33,6 +34,7 @@ public class PageDaoTest extends TestCase {
         assertEquals(excepted.getRang(), result.getRang());
         assertEquals(excepted.getTitle(), result.getTitle());
     }
+
     @Test
     public void testGetPages() throws Exception {
         PageDao pageDao = new PageDao();

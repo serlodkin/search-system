@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.dao;
 
 import com.google.gson.Gson;
@@ -41,8 +42,10 @@ import java.util.List;
  */
 public class PageDao {
 
+    private static final int POST = 27010;
+
     public void insert(Page page) {
-        MongoClient mongo = new MongoClient("localhost", 27017);
+        MongoClient mongo = new MongoClient("localhost", POST);
         try {
             MongoDatabase pages=mongo.getDatabase("pages");
             Document document = new Document();

@@ -33,14 +33,14 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 
-/**
+/*
  * Recognizes keywords for user request
  * implements {@link Recognizer}
  *
  * @author Daniil Matkov
  */
 public class TagsRecognizer implements Recognizer {
-    /**
+    /*
      * Recognizes all keywords form user request
      * @param request user request
      * @return list of {@link Word} which contains all keywords that are synonym to user request

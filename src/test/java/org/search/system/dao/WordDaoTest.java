@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * Created by Daniil Matkov on 04.11.16.
  */
 public class WordDaoTest extends TestCase {
+
     @Test
     public void testInsert() throws Exception {
         WordDao wordDao = new WordDao();
