@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.processor;
 
 import org.search.system.models.Page;
@@ -40,6 +41,7 @@ public class DataProcessor {
      * @param tags      {@link ArrayList} of {@link Word} all keywords from user request
      * @return {@link ArrayList<Page>} contains Pages which v
      */
+
     public ArrayList<Page> process(HashMap<String, HashSet<Page>> tagResult, ArrayList<Word> tags) {
         ArrayList<Page> res = new ArrayList<>();
         if (tagResult.size() == 0) {

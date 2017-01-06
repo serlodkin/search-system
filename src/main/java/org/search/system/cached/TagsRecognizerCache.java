@@ -33,14 +33,19 @@ import java.util.concurrent.TimeUnit;
 
 import static com.google.common.cache.CacheBuilder.newBuilder;
 
-/**
+/*
  * Class contains cache for recognizing keywords using {@link TagsRecognizer}
  * @author Daniil Matkov
  */
 public class TagsRecognizerCache {
+
+    private static final int MAX_SIZE = 1000;
+
+    private static final int MAX_TIME = 10;
+
     public static LoadingCache<String, ArrayList<Word>> tagsCache = newBuilder()
-            .maximumSize(1000)
-            .expireAfterAccess(10, TimeUnit.HOURS)
+            .maximumSize(MAX_SIZE)
+            .expireAfterAccess(MAX_TIME, TimeUnit.HOURS)
             .build(new CacheLoader<String, ArrayList<Word>>() {
                 @Override
                 public ArrayList<Word> load(String request) {

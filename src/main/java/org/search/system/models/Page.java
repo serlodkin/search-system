@@ -21,19 +21,25 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.models;
 
 import java.util.List;
 
-/**
+/*
  * Class contains main info about web-page
  * @author Daniil Matkov
  */
 public class Page {
+
     private String title;
+
     private String description;
+
     private List<String> tags;
+
     private String link;
+
     private long rang;
 
     public Page(String title, String description, List<String> tags, String link, long rang) {

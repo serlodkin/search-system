@@ -21,11 +21,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
+/*
  * Index action
  * @author Daniil Matkov
  */

@@ -21,19 +21,25 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.models;
 
 import java.util.ArrayList;
 
-/**
+/*
  * Class contains user data
  * @author Daniil Matkov
  */
 public class User {
+
     private String id;
+
     private String address;
+
     private String country;
+
     private String language;
+
     private ArrayList<String> history = new ArrayList<>();
 
 

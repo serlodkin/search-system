@@ -34,7 +34,7 @@ import org.search.system.models.Page;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * Data access object for page collection using MongoDb
  *
  * @author Daniil Matkov

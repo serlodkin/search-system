@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -39,8 +40,11 @@ import javax.servlet.http.HttpServletResponse;
  * @author Daniil Matkov
  */
 public class AddAction extends ActionSupport implements ServletResponseAware, ServletRequestAware {
+
     private String url;
+
     private HttpServletResponse servletResponse;
+
     private HttpServletRequest servletRequest;
 
     @Override
@@ -80,6 +84,6 @@ public class AddAction extends ActionSupport implements ServletResponseAware, Se
 
     @Override
     public void setServletResponse(HttpServletResponse httpServletResponse) {
-        this.servletResponse = servletResponse;
+        this.servletResponse = httpServletResponse;
     }
 }

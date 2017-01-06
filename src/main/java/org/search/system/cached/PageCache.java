@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.cached;
 
 import com.google.common.cache.CacheLoader;
@@ -33,14 +34,20 @@ import java.util.concurrent.TimeUnit;
 
 import static com.google.common.cache.CacheBuilder.newBuilder;
 
-/**
+/*
  * Class contains cache for getting  {@link List<Page>} by tag from database using {@link PageDao}
  * @author Daniil Matkov
  */
+
 public class PageCache {
+
+    private static final int MAX_SIZE = 1000;
+
+    private static final int MAX_TIME = 10;
+
     public static LoadingCache<String, List<Page>> pageCache = newBuilder()
-            .maximumSize(1000)
-            .expireAfterAccess(10, TimeUnit.HOURS)
+            .maximumSize(MAX_SIZE)
+            .expireAfterAccess(MAX_TIME, TimeUnit.HOURS)
             .build(new CacheLoader<String, List<Page>>() {
                 @Override
                 public List<Page> load(String tag) throws Exception {

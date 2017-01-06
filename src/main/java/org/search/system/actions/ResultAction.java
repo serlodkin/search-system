@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -35,15 +36,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-/**
+/*
  * Action presents result for search request
  *
  * @author Daniil Matkov
  */
 public class ResultAction extends ActionSupport implements ServletResponseAware, ServletRequestAware {
+
     private String searchQuery;
+
     private ArrayList<Page> result;
+
     private HttpServletResponse servletResponse;
+
     private HttpServletRequest servletRequest;
 
     public String getSearchQuery() {
@@ -94,6 +99,6 @@ public class ResultAction extends ActionSupport implements ServletResponseAware,
 
     @Override
     public void setServletResponse(HttpServletResponse httpServletResponse) {
-        this.servletResponse = servletResponse;
+        this.servletResponse = httpServletResponse;
     }
 }

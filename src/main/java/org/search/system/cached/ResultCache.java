@@ -36,14 +36,19 @@ import java.util.concurrent.TimeUnit;
 
 import static com.google.common.cache.CacheBuilder.newBuilder;
 
-/**
+/*
  * Class contains cache of search requests to results
  * @author Daniil Matkov
  */
 public class ResultCache {
+
+    private static final int MAX_SIZE = 1000;
+
+    private static final int MAX_TIME = 10;
+
     public static LoadingCache<String, ArrayList<Page>> resultsCache = newBuilder()
-            .maximumSize(1000)
-            .expireAfterAccess(10, TimeUnit.HOURS)
+            .maximumSize(MAX_SIZE)
+            .expireAfterAccess(MAX_TIME, TimeUnit.HOURS)
             .build(new CacheLoader<String, ArrayList<Page>>() {
                 @Override
                 public ArrayList<Page> load(String searchQuery) throws Exception {

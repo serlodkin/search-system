@@ -21,17 +21,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.models;
 
 
 import java.util.ArrayList;
 
-/**
+/*
  * Class which holds all data about keyword and it synonyms
  * @author Daniil Matkov
  */
 public class Word {
+
     private String word;
+
     private ArrayList<String> synonyms;
 
     public Word(String word, ArrayList<String> synonyms) {
@@ -47,7 +50,6 @@ public class Word {
         if (word == null) {
             return "";
         }
-
         return word;
     }
 }

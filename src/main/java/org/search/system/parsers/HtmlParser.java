@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+
 package org.search.system.parsers;
 
 import org.jsoup.Jsoup;
@@ -48,7 +49,9 @@ public class HtmlParser implements Parser{
         Elements elements = document.select("meta[name=" + attr + "]");
         for (Element element : elements) {
             final String s = element.attr("content");
-            if (s != null) return s;
+            if (s != null) {
+                return s;
+            }
         }
         elements = document.select("meta[property=" + attr + "]");
         return elements.stream().map(element -> element.attr("content")).filter(Objects::nonNull).findFirst().orElse(null);

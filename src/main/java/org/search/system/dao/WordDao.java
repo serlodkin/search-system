@@ -32,8 +32,8 @@ import org.search.system.models.Word;
 
 import java.util.ArrayList;
 
-/**
- * Data access object for word collection using MongoDb
+/*
+ * Data access object for word collection using MongoDb/
  * @author Daniil Matkov
  */
 public class WordDao {
