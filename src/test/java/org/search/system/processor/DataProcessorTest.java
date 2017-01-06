@@ -62,7 +62,6 @@ public class DataProcessorTest {
         Assert.assertEquals("Data", result.get(0).getTitle());
         Assert.assertEquals("Test", result.get(0).getDescription());
         Assert.assertEquals(0, result.get(0).getRang());
-
         Assert.assertEquals("http://example.com", result.get(1).getLink());
         Assert.assertEquals("Test", result.get(1).getTitle());
         Assert.assertEquals("Data", result.get(1).getDescription());

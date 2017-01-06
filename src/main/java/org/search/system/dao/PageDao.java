@@ -75,7 +75,6 @@ public class PageDao {
             FindIterable<Document> cursor = data.find();
             Gson gson = new Gson();
             for (Document doc:cursor){
-                //fix this
                 result.add(gson.fromJson(doc.toJson(),Page.class));
             }
             mongo.close();
