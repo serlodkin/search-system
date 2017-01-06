@@ -31,7 +31,7 @@ import org.apache.commons.lang3.StringUtils;
  * @author Daniil Matkov
  */
 public class RangCalc {
-    /**
+    /*
      * Calculates rang of page with this description,if user request is keyword
      * @param keyword user request for which web page rang calculated
      * @param description description of page to calc rang based on request

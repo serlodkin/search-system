@@ -60,7 +60,7 @@ public class WordDao {
     }
 
     public void insert(Word word) {
-        MongoClient mongo = new MongoClient("localhost", 27017);
+        MongoClient mongo = new MongoClient("localhost", PORT);
         try {
             MongoDatabase synonyms = mongo.getDatabase("synonyms");
             MongoCollection<Document> collection = synonyms.getCollection("synonyms");

@@ -36,7 +36,7 @@ import java.util.HashSet;
  * @author Daniil Matkov
  */
 public class DataProcessor {
-    /**
+    /*
      * @param tagResult {@link HashMap} of keyword to search results for this keyword
      * @param tags      {@link ArrayList} of {@link Word} all keywords from user request
      * @return {@link ArrayList} contains {@link Page} which v

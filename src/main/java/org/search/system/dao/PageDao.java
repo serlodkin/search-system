@@ -42,10 +42,10 @@ import java.util.List;
  */
 public class PageDao {
 
-    private static final int POST = 27010;
+    private static final int PORT = 27010;
 
     public void insert(Page page) {
-        MongoClient mongo = new MongoClient("localhost", POST);
+        MongoClient mongo = new MongoClient("localhost", PORT);
         try {
             MongoDatabase pages=mongo.getDatabase("pages");
             Document document = new Document();
@@ -70,7 +70,7 @@ public class PageDao {
     }
 
     public List<Page> getPages(String tag){
-        MongoClient mongo = new MongoClient("localhost", 27017);
+        MongoClient mongo = new MongoClient("localhost", PORT);
         ArrayList<Page> result = new ArrayList<>();
         try {
             MongoDatabase pages=mongo.getDatabase("pages");
