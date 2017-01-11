@@ -60,14 +60,14 @@ public class DataProcessorTest {
         d.add(new Word("Data", new ArrayList<>()));
         ArrayList<Page> result = dataProcessor.process(test, d);
         Assert.assertEquals(result.size(), 2);
-        Assert.assertEquals("http://example.com", result.get(1).getLink());
-        Assert.assertEquals("Data", result.get(1).getTitle());
-        Assert.assertEquals("Test", result.get(1).getDescription());
-        Assert.assertEquals(0, result.get(1).getRang());
         Assert.assertEquals("http://example.com", result.get(0).getLink());
-        Assert.assertEquals("Test", result.get(0).getTitle());
-        Assert.assertEquals("Data", result.get(0).getDescription());
+        Assert.assertEquals("Data", result.get(0).getTitle());
+        Assert.assertEquals("Test", result.get(0).getDescription());
         Assert.assertEquals(0, result.get(0).getRang());
+        Assert.assertEquals("http://example.com", result.get(1).getLink());
+        Assert.assertEquals("Test", result.get(1).getTitle());
+        Assert.assertEquals("Data", result.get(1).getDescription());
+        Assert.assertEquals(0, result.get(1).getRang());
 
     }
 
