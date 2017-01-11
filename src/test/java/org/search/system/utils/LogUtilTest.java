@@ -25,7 +25,7 @@ public class LogUtilTest extends TestCase {
                 }
             }
         }
-        assertEquals(temp.contains("some info"), true);
+        assertEquals(true, temp.contains("some info"));
     }
 
     public void testLog1() throws Exception {
@@ -43,7 +43,7 @@ public class LogUtilTest extends TestCase {
                 }
             }
         }
-        assertEquals(temp.contains("Какая-то информация"), true);
+        assertEquals(true, temp.contains("Какая-то информация"));
     }
 
     public void testLog2() throws Exception {
@@ -61,7 +61,7 @@ public class LogUtilTest extends TestCase {
                 }
             }
         }
-        assertEquals(temp.contains("¬æѰ%"), true);
+        assertEquals(true, temp.contains("¬æѰ%"));
     }
 
 }
