@@ -52,6 +52,7 @@ public class DataProcessor {
             result.retainAll(tagResult.get(tags.get(index).getWord()));
         }
         res.addAll(result);
+        res.sort(null);
         return res;
     }
 }

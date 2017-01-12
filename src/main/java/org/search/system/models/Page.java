@@ -30,7 +30,7 @@ import java.util.List;
  * Class contains main info about web-page
  * @author Daniil Matkov
  */
-public class Page {
+public class Page implements Comparable {
 
     private String title;
 
@@ -69,5 +69,16 @@ public class Page {
 
     public List<String> getTags() {
         return tags;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Page compare = (Page) o;
+        int result = Long.compare(this.rang, compare.getRang());
+        if (result != 0) {
+            return result;
+        }
+        result = this.title.compareTo(compare.getTitle());
+        return result;
     }
 }
