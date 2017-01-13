@@ -1,7 +1,6 @@
 package org.search.system.recognition;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 import org.search.system.dao.WordDao;
 import org.search.system.models.Word;
 
@@ -19,7 +18,6 @@ public class TagsRecognizerTest extends TestCase {
         wordDao.insert(new Word("data", synonyms));
     }
 
-    @Test
     public void testRecognize() throws Exception {
         TagsRecognizer tagsRecognizer = new TagsRecognizer();
         ArrayList<String> synonyms = new ArrayList<>();

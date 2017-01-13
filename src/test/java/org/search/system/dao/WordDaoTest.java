@@ -1,7 +1,6 @@
 package org.search.system.dao;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 import org.search.system.models.Word;
 
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import java.util.ArrayList;
  */
 public class WordDaoTest extends TestCase {
 
-    @Test
     public void testInsert() throws Exception {
         WordDao wordDao = new WordDao();
         ArrayList<String> synonyms = new ArrayList<>();
@@ -35,7 +33,6 @@ public class WordDaoTest extends TestCase {
         wordDao.insert(new Word("data", synonyms));
     }
 
-    @Test
     public void testGetWord() throws Exception {
         WordDao wordDao = new WordDao();
         ArrayList<String> synonyms = new ArrayList<>();

@@ -1,7 +1,6 @@
 package org.search.system.processor;
 
 import org.junit.Assert;
-import org.junit.Test;
 import org.search.system.models.Page;
 import org.search.system.models.Word;
 
@@ -14,7 +13,6 @@ import java.util.HashSet;
  */
 public class DataProcessorTest {
 
-    @Test
     public void testProcess() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();
         HashMap<String, HashSet<Page>> test = new HashMap<>();
@@ -43,7 +41,6 @@ public class DataProcessorTest {
         Assert.assertEquals("http://example.com", result.get(0).getLink());
     }
 
-    @Test
     public void testProcess1() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();
         HashMap<String, HashSet<Page>> test = new HashMap<>();
@@ -71,7 +68,6 @@ public class DataProcessorTest {
 
     }
 
-    @Test
     public void testProcess2() throws Exception {
         DataProcessor dataProcessor = new DataProcessor();
         HashMap<String, HashSet<Page>> test = new HashMap<>();

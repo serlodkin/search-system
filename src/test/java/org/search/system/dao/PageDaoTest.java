@@ -1,7 +1,6 @@
 package org.search.system.dao;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 import org.search.system.models.Page;
 
 import java.util.ArrayList;
@@ -19,7 +18,6 @@ public class PageDaoTest extends TestCase {
         pageDao.insert(new Page("Test", "test test", test, "http://example.com", 0));
     }
 
-    @Test
     public void testInsert() throws Exception {
         PageDao pageDao = new PageDao();
         ArrayList<String> test = new ArrayList<>();
@@ -35,7 +33,6 @@ public class PageDaoTest extends TestCase {
         assertEquals(excepted.getTitle(), result.getTitle());
     }
 
-    @Test
     public void testGetPages() throws Exception {
         PageDao pageDao = new PageDao();
         ArrayList<String> excepted = new ArrayList<>();
