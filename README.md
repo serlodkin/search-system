@@ -7,15 +7,15 @@
 ```BASH
 git clone https://github.com/matkovd/search-system.git
 ```
-
 2.Cd into search-system
 ```BASH
 cd search-system
 ```
-
 3.Run it
 ```BASH
 mvn jetty:run
 ```
-
 4.Go to localhost:8080
+##Requirements
+* Java 1.8
+* MongoDB
