@@ -65,6 +65,10 @@ public class User {
         return language;
     }
 
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
     public ArrayList<String> getHistory() {
         return history;
     }

@@ -55,6 +55,10 @@ public class ConcurrentUser {
         return this.origin.getLanguage();
     }
 
+    public synchronized void setLanguage(String language) {
+        this.origin.setLanguage(language);
+    }
+
     public synchronized ArrayList<String> getHistory() {
         return this.origin.getHistory();
     }

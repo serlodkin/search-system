@@ -9,6 +9,13 @@ import java.util.ArrayList;
  * Created by Daniil on 17.01.2017.
  */
 public class ConcurrentUserTest extends TestCase {
+
+    public void testSetLanguage() throws Exception {
+        ConcurrentUser user = new ConcurrentUser(new User("Some address", "Some country", "Some language"));
+        user.setLanguage("another language");
+        assertEquals("another language", user.getLanguage());
+    }
+
     public void testGetAddress() throws Exception {
         ConcurrentUser user = new ConcurrentUser(new User("Some address", "Some country", "Some language"));
         assertEquals("Some address", user.getAddress());

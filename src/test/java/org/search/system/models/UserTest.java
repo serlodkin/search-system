@@ -8,6 +8,13 @@ import java.util.ArrayList;
  * Created by Daniil on 12.01.2017.
  */
 public class UserTest extends TestCase {
+
+    public void testSetLanguage() throws Exception {
+        User user = new User("some address", "Russia", "Russian");
+        user.setLanguage("some language");
+        assertEquals("some language", user.getLanguage());
+    }
+
     public void testGetAddress() throws Exception {
         User user = new User("some address", "Russia", "Russian");
         assertEquals("some address", user.getAddress());
