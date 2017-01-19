@@ -19,3 +19,4 @@ mvn jetty:run
 ##Requirements
 * Java 1.8
 * MongoDB
+* Maven
