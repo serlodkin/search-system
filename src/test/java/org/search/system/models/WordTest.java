@@ -19,4 +19,19 @@ public class WordTest extends TestCase {
         assertEquals("word", word.getWord());
     }
 
+    public void testGetWordNull() throws Exception {
+        Word word = new Word(null, new ArrayList<>());
+        assertEquals("", word.getWord());
+    }
+
+    public void testGetSynonymsNull() throws Exception {
+        Word word = new Word("word", null);
+        assertEquals(new ArrayList<String>(), word.getSynonyms());
+    }
+
+    public void testNull() throws Exception {
+        Word word = new Word(null, null);
+        assertEquals("", word.getWord());
+        assertEquals(new ArrayList<String>(), word.getSynonyms());
+    }
 }

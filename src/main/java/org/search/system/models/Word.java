@@ -43,6 +43,9 @@ public class Word {
     }
 
     public ArrayList<String> getSynonyms() {
+        if (synonyms == null) {
+            return new ArrayList<>();
+        }
         return synonyms;
     }
 
