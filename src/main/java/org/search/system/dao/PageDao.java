@@ -31,6 +31,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.search.system.models.Page;
+import org.search.system.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,7 @@ public class PageDao {
             mongo.close();
         } catch (Exception ex) {
             mongo.close();
-            ex.printStackTrace();
+            LogUtil.log(ex.toString());
         }
     }
 
@@ -83,7 +84,7 @@ public class PageDao {
             mongo.close();
         } catch (Exception ex) {
             mongo.close();
-            ex.printStackTrace();
+            LogUtil.log(ex.toString());
         }
         return result;
     }

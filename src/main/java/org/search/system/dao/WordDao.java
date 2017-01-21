@@ -30,6 +30,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.search.system.models.Word;
+import org.search.system.utils.LogUtil;
 
 import java.util.ArrayList;
 
@@ -53,7 +54,7 @@ public class WordDao {
             Gson gson = new Gson();
             res = gson.fromJson(result.toJson(), Word.class);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            LogUtil.log(ex.toString());
         }
         mongo.close();
         return res;
@@ -71,7 +72,7 @@ public class WordDao {
             mongo.close();
         } catch (Exception ex) {
             mongo.close();
-            ex.printStackTrace();
+            LogUtil.log(ex.toString());
         }
     }
 }

@@ -29,6 +29,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.search.system.cached.ResultCache;
 import org.search.system.models.Page;
+import org.search.system.utils.LogUtil;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -77,7 +78,7 @@ public class ResultAction extends ActionSupport implements ServletResponseAware,
         try {
             result = ResultCache.resultsCache.get(searchQuery);
         } catch (ExecutionException e) {
-            e.printStackTrace();
+            LogUtil.log(e.toString());
         }
 
         return SUCCESS;
