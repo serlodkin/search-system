@@ -2,8 +2,10 @@ package org.search.system.interfaces;
 
 import java.util.List;
 
-/**
- * Created by Daniil on 22.01.2017.
+/*
+ * Interface describes all pages
+ *
+ * @author Daniil Matkov
  */
 public interface Page extends Comparable {
     String getTitle();

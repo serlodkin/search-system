@@ -5,8 +5,9 @@ import org.search.system.models.NullablePage;
 
 import java.util.List;
 
-/**
- * Created by Daniil on 22.01.2017.
+/*
+ * Class contains main info about web-page null-safe
+ * @author Daniil Matkov
  */
 public class ValidatedPage implements Page {
     private NullablePage origin;
