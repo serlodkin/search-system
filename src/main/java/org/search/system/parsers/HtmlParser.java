@@ -30,6 +30,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.search.system.interfaces.Parser;
 import org.search.system.models.Page;
+import org.search.system.utils.LogUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -96,7 +97,7 @@ public class HtmlParser implements Parser{
             tags.addAll(descriptions);
             return new Page(title,description,tags,url,0);
         } catch (IOException e) {
-            e.printStackTrace();
+            LogUtil.log(e.toString());
         }
         return null;
     }

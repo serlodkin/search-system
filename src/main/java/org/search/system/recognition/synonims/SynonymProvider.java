@@ -25,6 +25,7 @@ SOFTWARE.
 package org.search.system.recognition.synonims;
 
 import org.search.system.cached.WordCache;
+import org.search.system.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -44,6 +45,7 @@ public class SynonymProvider {
         try {
             return WordCache.wordCache.get(word).getSynonyms();
         } catch (ExecutionException e) {
+            LogUtil.log(e.toString());
             return new ArrayList<String>();
         }
     }
