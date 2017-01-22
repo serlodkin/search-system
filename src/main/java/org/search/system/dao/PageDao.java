@@ -45,7 +45,7 @@ public class PageDao {
 
     private static final int PORT = 27017;
 
-    public void insert(Page page) {
+    public void insertPage(Page page) {
         MongoClient mongo = new MongoClient("localhost", PORT);
         try {
             MongoDatabase pages=mongo.getDatabase("pages");

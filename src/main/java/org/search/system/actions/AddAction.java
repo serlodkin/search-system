@@ -52,7 +52,7 @@ public class AddAction extends ActionSupport implements ServletResponseAware, Se
         HtmlParser parser = new HtmlParser();
         Page result = parser.parse(url);
         PageDao pageDao = new PageDao();
-        pageDao.insert(result);
+        pageDao.insertPage(result);
         Cookie history = null;
         for (Cookie cookie : servletRequest.getCookies()) {
             if (cookie.getName().equals("history")) {

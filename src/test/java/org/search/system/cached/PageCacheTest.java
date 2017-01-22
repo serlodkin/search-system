@@ -21,7 +21,7 @@ public class PageCacheTest extends TestCase {
         test.add("test");
         test.add("tests");
         test.add("testing");
-        pageDao.insert(new Page("Test", "test test", test, "http://example.com", 0));
+        pageDao.insertPage(new Page("Test", "test test", test, "http://example.com", 0));
     }
 
     public void test() throws ExecutionException {

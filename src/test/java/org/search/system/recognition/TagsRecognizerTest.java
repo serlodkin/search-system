@@ -15,7 +15,7 @@ public class TagsRecognizerTest extends TestCase {
         ArrayList<String> synonyms = new ArrayList<>();
         synonyms.add("statistics");
         synonyms.add("documents");
-        wordDao.insert(new Word("data", synonyms));
+        wordDao.insertPage(new Word("data", synonyms));
     }
 
     public void testRecognize() throws Exception {

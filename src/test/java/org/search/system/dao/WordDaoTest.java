@@ -16,7 +16,7 @@ public class WordDaoTest extends TestCase {
         synonyms.add("testing");
         synonyms.add("tests");
         Word excepted = new Word("test", synonyms);
-        wordDao.insert(excepted);
+        wordDao.insertPage(excepted);
         Word result = wordDao.getWord("test");
         assertEquals(excepted.getWord(), result.getWord());
         assertEquals(excepted.getSynonyms(), result.getSynonyms());
@@ -30,7 +30,7 @@ public class WordDaoTest extends TestCase {
         ArrayList<String> synonyms = new ArrayList<>();
         synonyms.add("statistics");
         synonyms.add("documents");
-        wordDao.insert(new Word("data", synonyms));
+        wordDao.insertPage(new Word("data", synonyms));
     }
 
     public void testGetWord() throws Exception {

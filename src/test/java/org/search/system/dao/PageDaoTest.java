@@ -15,7 +15,7 @@ public class PageDaoTest extends TestCase {
         test.add("test");
         test.add("tests");
         test.add("testing");
-        pageDao.insert(new Page("Test", "test test", test, "http://example.com", 0));
+        pageDao.insertPage(new Page("Test", "test test", test, "http://example.com", 0));
     }
 
     public void testInsert() throws Exception {
@@ -24,7 +24,7 @@ public class PageDaoTest extends TestCase {
         test.add("data");
         test.add("Data");
         Page excepted = new Page("Data", "data", test, "http://example.com", 0);
-        pageDao.insert(excepted);
+        pageDao.insertPage(excepted);
         Page result = pageDao.getPages("data").get(0);
         assertEquals(excepted.getDescription(), result.getDescription());
         assertEquals(excepted.getLink(), result.getLink());
