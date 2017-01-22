@@ -42,8 +42,10 @@ public class WordDao {
 
     private static final int PORT = 27017;
 
+    private static final String HOST_NAME = "localhost";
+
     public Word getWord(String word) {
-        MongoClient mongo = new MongoClient("localhost", PORT);
+        MongoClient mongo = new MongoClient(HOST_NAME, PORT);
         Word res = new Word(word, new ArrayList<>());
         try {
             MongoDatabase synonyms = mongo.getDatabase("synonyms");
@@ -61,7 +63,7 @@ public class WordDao {
     }
 
     public void insertPage(Word word) {
-        MongoClient mongo = new MongoClient("localhost", PORT);
+        MongoClient mongo = new MongoClient(HOST_NAME, PORT);
         try {
             MongoDatabase synonyms = mongo.getDatabase("synonyms");
             MongoCollection<Document> collection = synonyms.getCollection("synonyms");

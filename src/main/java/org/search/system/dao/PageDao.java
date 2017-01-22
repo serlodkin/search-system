@@ -45,8 +45,11 @@ public class PageDao {
 
     private static final int PORT = 27017;
 
+    private static final String HOST_NAME = "localhost";
+
+
     public void insertPage(Page page) {
-        MongoClient mongo = new MongoClient("localhost", PORT);
+        MongoClient mongo = new MongoClient(HOST_NAME, PORT);
         try {
             MongoDatabase pages=mongo.getDatabase("pages");
             Document document = new Document();
@@ -71,7 +74,7 @@ public class PageDao {
     }
 
     public List<Page> getPages(String tag){
-        MongoClient mongo = new MongoClient("localhost", PORT);
+        MongoClient mongo = new MongoClient(HOST_NAME, PORT);
         ArrayList<Page> result = new ArrayList<>();
         try {
             MongoDatabase pages=mongo.getDatabase("pages");
