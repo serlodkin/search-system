@@ -81,4 +81,16 @@ public class Page implements Comparable {
         result = this.title.compareTo(compare.getTitle());
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Page{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", tags=" + tags +
+                ", link='" + link + '\'' +
+                ", rang=" + rang +
+                '}';
+    }
+
 }
