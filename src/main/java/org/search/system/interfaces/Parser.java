@@ -24,8 +24,6 @@ SOFTWARE.
 
 package org.search.system.interfaces;
 
-import org.search.system.models.Page;
-
 /*
  * Interface describes all parsers
  *

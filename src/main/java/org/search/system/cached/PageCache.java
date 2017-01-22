@@ -27,7 +27,7 @@ package org.search.system.cached;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import org.search.system.dao.PageDao;
-import org.search.system.models.Page;
+import org.search.system.interfaces.Page;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

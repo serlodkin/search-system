@@ -28,8 +28,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.search.system.interfaces.Page;
 import org.search.system.interfaces.Parser;
-import org.search.system.models.Page;
+import org.search.system.models.validated.ValidatedPage;
 import org.search.system.utils.LogUtil;
 
 import java.io.IOException;
@@ -95,7 +96,7 @@ public class HtmlParser implements Parser{
                     .collect(Collectors.toList()));
             tags.addAll(titles);
             tags.addAll(descriptions);
-            return new Page(title,description,tags,url,0);
+            return new ValidatedPage(title, description, tags, url, 0);
         } catch (IOException e) {
             LogUtil.log(e.toString());
         }

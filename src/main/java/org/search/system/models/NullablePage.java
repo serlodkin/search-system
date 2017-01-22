@@ -24,13 +24,15 @@ SOFTWARE.
 
 package org.search.system.models;
 
+import org.search.system.interfaces.Page;
+
 import java.util.List;
 
 /*
  * Class contains main info about web-page
  * @author Daniil Matkov
  */
-public class Page implements Comparable {
+public class NullablePage implements Page {
 
     private String title;
 
@@ -42,7 +44,7 @@ public class Page implements Comparable {
 
     private long rang;
 
-    public Page(String title, String description, List<String> tags, String link, long rang) {
+    public NullablePage(String title, String description, List<String> tags, String link, long rang) {
         this.title = title;
         this.description = description;
         this.tags = tags;
@@ -50,23 +52,28 @@ public class Page implements Comparable {
         this.rang = rang;
     }
 
+    @Override
     public String getTitle() {
         return title;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
 
 
+    @Override
     public String getLink() {
         return link;
     }
 
+    @Override
     public long getRang() {
         return rang;
     }
 
+    @Override
     public List<String> getTags() {
         return tags;
     }

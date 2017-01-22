@@ -26,7 +26,7 @@ package org.search.system.cached;
 
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import org.search.system.models.Page;
+import org.search.system.interfaces.Page;
 import org.search.system.models.Word;
 import org.search.system.processor.DataProcessor;
 

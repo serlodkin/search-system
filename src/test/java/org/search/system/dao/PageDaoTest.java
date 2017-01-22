@@ -1,7 +1,8 @@
 package org.search.system.dao;
 
 import junit.framework.TestCase;
-import org.search.system.models.Page;
+import org.search.system.interfaces.Page;
+import org.search.system.models.NullablePage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class PageDaoTest extends TestCase {
         test.add("test");
         test.add("tests");
         test.add("testing");
-        pageDao.insertPage(new Page("Test", "test test", test, "http://example.com", 0));
+        pageDao.insertPage(new NullablePage("Test", "test test", test, "http://example.com", 0));
     }
 
     public void testInsert() throws Exception {
@@ -23,7 +24,7 @@ public class PageDaoTest extends TestCase {
         ArrayList<String> test = new ArrayList<>();
         test.add("data");
         test.add("Data");
-        Page excepted = new Page("Data", "data", test, "http://example.com", 0);
+        Page excepted = new NullablePage("Data", "data", test, "http://example.com", 0);
         pageDao.insertPage(excepted);
         Page result = pageDao.getPages("data").get(0);
         assertEquals(excepted.getDescription(), result.getDescription());

@@ -24,7 +24,7 @@ SOFTWARE.
 
 package org.search.system.processor;
 
-import org.search.system.models.Page;
+import org.search.system.interfaces.Page;
 import org.search.system.models.Word;
 
 import java.util.ArrayList;

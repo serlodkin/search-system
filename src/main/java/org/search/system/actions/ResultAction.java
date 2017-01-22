@@ -28,7 +28,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.search.system.cached.ResultCache;
-import org.search.system.models.Page;
+import org.search.system.interfaces.Page;
 import org.search.system.utils.LogUtil;
 
 import javax.servlet.http.Cookie;

@@ -1,7 +1,8 @@
 package org.search.system.processor;
 
 import org.junit.Assert;
-import org.search.system.models.Page;
+import org.search.system.interfaces.Page;
+import org.search.system.models.NullablePage;
 import org.search.system.models.Word;
 
 import java.util.ArrayList;
@@ -21,9 +22,9 @@ public class DataProcessorTest {
         ArrayList<String> synonims = new ArrayList<>();
         synonims.add("statistics");
         synonims.add("documents");
-        Page t = new Page("Test", "Test", synonims, "http://example.com", 0);
-        Page t1 = new Page("Test", "Data", synonims, "http://example.com", 0);
-        Page t2 = new Page("Data", "Test", synonims, "http://example.com", 0);
+        Page t = new NullablePage("Test", "Test", synonims, "http://example.com", 0);
+        Page t1 = new NullablePage("Test", "Data", synonims, "http://example.com", 0);
+        Page t2 = new NullablePage("Data", "Test", synonims, "http://example.com", 0);
         first.add(t1);
         first.add(t);
         second.add(t);
@@ -48,8 +49,8 @@ public class DataProcessorTest {
         ArrayList<String> synonims = new ArrayList<>();
         synonims.add("statistics");
         synonims.add("documents");
-        Page t1 = new Page("Test", "Data", synonims, "http://example.com", 0);
-        Page t2 = new Page("Data", "Test", synonims, "http://example.com", 0);
+        Page t1 = new NullablePage("Test", "Data", synonims, "http://example.com", 0);
+        Page t2 = new NullablePage("Data", "Test", synonims, "http://example.com", 0);
         first.add(t1);
         first.add(t2);
         test.put("Data", first);

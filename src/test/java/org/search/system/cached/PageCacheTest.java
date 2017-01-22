@@ -2,7 +2,8 @@ package org.search.system.cached;
 
 import junit.framework.TestCase;
 import org.search.system.dao.PageDao;
-import org.search.system.models.Page;
+import org.search.system.interfaces.Page;
+import org.search.system.models.NullablePage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class PageCacheTest extends TestCase {
         test.add("test");
         test.add("tests");
         test.add("testing");
-        pageDao.insertPage(new Page("Test", "test test", test, "http://example.com", 0));
+        pageDao.insertPage(new NullablePage("Test", "test test", test, "http://example.com", 0));
     }
 
     public void test() throws ExecutionException {

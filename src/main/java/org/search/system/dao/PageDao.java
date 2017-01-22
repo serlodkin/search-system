@@ -30,7 +30,8 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
-import org.search.system.models.Page;
+import org.search.system.interfaces.Page;
+import org.search.system.models.NullablePage;
 import org.search.system.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -82,7 +83,7 @@ public class PageDao {
             FindIterable<Document> cursor = data.find();
             Gson gson = new Gson();
             for (Document doc:cursor){
-                result.add(gson.fromJson(doc.toJson(),Page.class));
+                result.add(gson.fromJson(doc.toJson(), NullablePage.class));
             }
             mongo.close();
         } catch (Exception ex) {
