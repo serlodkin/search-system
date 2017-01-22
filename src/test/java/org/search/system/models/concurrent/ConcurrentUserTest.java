@@ -1,4 +1,4 @@
-package org.search.system.concurrent;
+package org.search.system.models.concurrent;
 
 import junit.framework.TestCase;
 import org.search.system.models.User;

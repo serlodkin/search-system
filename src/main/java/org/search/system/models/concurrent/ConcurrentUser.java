@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-package org.search.system.concurrent;
+package org.search.system.models.concurrent;
 
 import org.search.system.models.User;
 
