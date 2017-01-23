@@ -38,6 +38,7 @@ public class ValidatedPageTest extends TestCase {
     public void testGetTitleNull() throws Exception {
         try {
             Page page = new ValidatedPage(null, "some description", new ArrayList<>(), "http://example.com", 0);
+            page.getTitle();
         } catch (Exception exception) {
             assertEquals(new IllegalArgumentException().toString(), exception.toString());
         }
@@ -46,6 +47,7 @@ public class ValidatedPageTest extends TestCase {
     public void testGetDescriptionNull() throws Exception {
         try {
             Page page = new ValidatedPage("some title", null, new ArrayList<>(), "http://example.com", 0);
+            page.getTitle();
         } catch (Exception exception) {
             assertEquals(new IllegalArgumentException().toString(), exception.toString());
         }
@@ -54,6 +56,7 @@ public class ValidatedPageTest extends TestCase {
     public void testGetLinkNull() throws Exception {
         try {
             Page page = new ValidatedPage("some title", "some description", new ArrayList<>(), null, 0);
+            page.getTitle();
         } catch (Exception exception) {
             assertEquals(new IllegalArgumentException().toString(), exception.toString());
         }
@@ -62,6 +65,7 @@ public class ValidatedPageTest extends TestCase {
     public void testGetTagsNull() throws Exception {
         try {
             Page page = new ValidatedPage("some title", "some description", null, "http://example.com", 0);
+            page.getTitle();
         } catch (Exception exception) {
             assertEquals(new IllegalArgumentException().toString(), exception.toString());
         }

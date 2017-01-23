@@ -91,13 +91,13 @@ public class NullablePage implements Page {
 
     @Override
     public String toString() {
-        return "Page{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", tags=" + tags +
-                ", link='" + link + '\'' +
-                ", rang=" + rang +
-                '}';
+        return "Page{"
+                + "title='" + title + '\''
+                + ", description='" + description + '\''
+                + ", tags=" + tags
+                + ", link='" + link + '\''
+                + ", rang=" + rang
+                + '}';
     }
 
 }

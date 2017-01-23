@@ -10,6 +10,7 @@ import java.util.List;
  * @author Daniil Matkov
  */
 public class ValidatedPage implements Page {
+
     private NullablePage origin;
 
     public ValidatedPage(String title, String description, List<String> tags, String link, long rang) throws IllegalArgumentException {
@@ -62,12 +63,6 @@ public class ValidatedPage implements Page {
 
     @Override
     public int compareTo(Object o) {
-        Page compare = (Page) o;
-        int result = Long.compare(this.origin.getRang(), compare.getRang());
-        if (result != 0) {
-            return result;
-        }
-        result = this.origin.getTitle().compareTo(compare.getTitle());
-        return result;
+        return this.origin.compareTo(o);
     }
 }
