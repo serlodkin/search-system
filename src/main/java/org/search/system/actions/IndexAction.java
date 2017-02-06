@@ -31,6 +31,9 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author Daniil Matkov
  */
 public class IndexAction extends ActionSupport{
-
+    @Override
+    public String execute() {
+        return SUCCESS;
+    }
 }
 
