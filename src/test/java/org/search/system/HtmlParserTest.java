@@ -43,7 +43,11 @@ public class HtmlParserTest extends TestCase {
         assertEquals("https://www.java.com/ru/", parser.parse("https://www.java.com/ru/").getLink());
         assertEquals("Загрузите бесплатное ПО Java для Вашего настольного компьютера сейчас! ", parser.parse("https://www.java.com/ru/").getDescription());
         assertEquals(0, parser.parse("https://www.java.com/ru/").getRang());
-        assertEquals(excepted, parser.parse("https://www.java.com/ru/").getTags());
+        int index=0;
+        for (String tag:parser.parse("https://www.java.com/ru/").getTags()){
+            assertEquals(excepted.get(index),tag);
+            index++;
+        }
     }
     
     public void testParse4() throws Exception {
