@@ -26,24 +26,13 @@ public class HtmlParserTest extends TestCase {
     public void testParse() throws Exception {
         HtmlParser parser=new HtmlParser();
         ArrayList<String> excepted= new ArrayList<>();
-        excepted.add("Чат");
-        excepted.add("случайный чат");
-        excepted.add("беседа");
-        excepted.add("поболтать");
-        excepted.add("развлечение");
-        excepted.add("досуг");
-        excepted.add("Анонимный");
-        excepted.add("чат");
-        excepted.add("Анонимный");
-        excepted.add("чат,разговор");
-        excepted.add("с");
-        excepted.add("незнакомцем,случайная");
-        excepted.add("беседа");
-        assertEquals("Анонимный чат", parser.parse("https://anonimplace.com/").getTitle());
-        assertEquals("https://anonimplace.com/", parser.parse("https://anonimplace.com/").getLink());
-        assertEquals("Анонимный чат,разговор с незнакомцем,случайная беседа", parser.parse("https://anonimplace.com/").getDescription());
-        assertEquals(0, parser.parse("https://anonimplace.com/").getRang());
-        assertEquals(excepted, parser.parse("https://anonimplace.com/").getTags());
+        excepted.add("java");
+        excepted.add("downloads");
+        assertEquals("java.com: Java и вы", parser.parse("https://www.java.com/ru/").getTitle());
+        assertEquals("https://www.java.com/ru/", parser.parse("https://www.java.com/ru/").getLink());
+        assertEquals("Загрузите бесплатное ПО Java для Вашего настольного компьютера сейчас!", parser.parse("https://www.java.com/ru/").getDescription());
+        assertEquals(0, parser.parse("https://www.java.com/ru/").getRang());
+        assertEquals(excepted, parser.parse("https://www.java.com/ru/").getTags());
     }
 
 
