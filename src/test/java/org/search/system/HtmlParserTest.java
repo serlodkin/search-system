@@ -30,10 +30,13 @@ public class HtmlParserTest extends TestCase {
         excepted.add("downloads");
         assertEquals("java.com: Java и вы", parser.parse("https://www.java.com/ru/").getTitle());
         assertEquals("https://www.java.com/ru/", parser.parse("https://www.java.com/ru/").getLink());
-        assertEquals("Загрузите бесплатное ПО Java для Вашего настольного компьютера сейчас!", parser.parse("https://www.java.com/ru/").getDescription());
+        assertEquals("Загрузите бесплатное ПО Java для Вашего настольного компьютера сейчас! ", parser.parse("https://www.java.com/ru/").getDescription());
         assertEquals(0, parser.parse("https://www.java.com/ru/").getRang());
         assertEquals(excepted, parser.parse("https://www.java.com/ru/").getTags());
     }
-
-
+    
+    public void testParse4() throws Exception {
+        HtmlParser parser=new HtmlParser();
+        assertEquals("C++ Shell", parser.parse("http://cpp.sh/").getTitle());
+     }
 }
