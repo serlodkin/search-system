@@ -29,7 +29,9 @@ public class HtmlParserTest extends TestCase {
         excepted.add("java");
         excepted.add("downloads");
         excepted.add("java.com:");
-        excepted.add("Java, и, вы");
+        excepted.add("Java");
+        excepted.add("и");
+        excepted.add("вы");
         excepted.add("Загрузите");
         excepted.add("бесплатное");
         excepted.add("ПО");
