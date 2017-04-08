@@ -28,6 +28,17 @@ public class HtmlParserTest extends TestCase {
         ArrayList<String> excepted= new ArrayList<>();
         excepted.add("java");
         excepted.add("downloads");
+        excepted.add("java.com:");
+        excepted.add("Java, и, вы");
+        excepted.add("Загрузите");
+        excepted.add("бесплатное");
+        excepted.add("ПО");
+        excepted.add("Java");
+        excepted.add("для");
+        excepted.add("Вашего");
+        excepted.add("настольного");
+        excepted.add("компьютера");
+        excepted.add("сейчас");
         assertEquals("java.com: Java и вы", parser.parse("https://www.java.com/ru/").getTitle());
         assertEquals("https://www.java.com/ru/", parser.parse("https://www.java.com/ru/").getLink());
         assertEquals("Загрузите бесплатное ПО Java для Вашего настольного компьютера сейчас! ", parser.parse("https://www.java.com/ru/").getDescription());
