@@ -38,7 +38,7 @@ public class HtmlParserTest extends TestCase {
         excepted.add("Вашего");
         excepted.add("настольного");
         excepted.add("компьютера");
-        excepted.add("сейчас");
+        excepted.add("сейчас!");
         assertEquals("java.com: Java и вы", parser.parse("https://www.java.com/ru/").getTitle());
         assertEquals("https://www.java.com/ru/", parser.parse("https://www.java.com/ru/").getLink());
         assertEquals("Загрузите бесплатное ПО Java для Вашего настольного компьютера сейчас! ", parser.parse("https://www.java.com/ru/").getDescription());
