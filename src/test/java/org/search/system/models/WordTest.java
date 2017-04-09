@@ -11,6 +11,7 @@ public class WordTest extends TestCase {
 
     private static final int ARRAY_LENGTH = 5000000;
 
+
     public void testGetSynonyms() throws Exception {
         Word word = new Word("word", new ArrayList<>());
         assertEquals(new ArrayList<String>(), word.getSynonyms());
