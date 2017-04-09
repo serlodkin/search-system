@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class WordTest extends TestCase {
 
+    private static final int ARRAY_LENGTH = 5000000;
     public void testGetSynonyms() throws Exception {
         Word word = new Word("word", new ArrayList<>());
         assertEquals(new ArrayList<String>(), word.getSynonyms());
@@ -33,7 +34,7 @@ public class WordTest extends TestCase {
 
     public void testGetSynonyms3() throws Exception {
         ArrayList<String> s = new ArrayList<>();
-        for (int value = 0; value < 5000000; value++) {
+        for (int value = 0; value < ARRAY_LENGTH; value++) {
             s.add(Integer.toString(value));
         }
         Word word = new Word("word", s);
