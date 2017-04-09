@@ -55,5 +55,5 @@ public class HtmlParserTest extends TestCase {
     public void testParse4() throws Exception {
         HtmlParser parser=new HtmlParser();
         assertEquals("C++ Shell", parser.parse("http://cpp.sh/").getTitle());
-     }
+    }
 }
