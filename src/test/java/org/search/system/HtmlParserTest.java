@@ -56,4 +56,20 @@ public class HtmlParserTest extends TestCase {
         HtmlParser parser=new HtmlParser();
         assertEquals("C++ Shell", parser.parse("http://cpp.sh/").getTitle());
     }
+
+    public void testParse5() throws Exception {
+        HtmlParser parser = new HtmlParser();
+        assertEquals("Example Domain", parser.parse("http://example.org/").getTitle());
+    }
+
+    public void testParse6() throws Exception {
+        HtmlParser parser = new HtmlParser();
+        assertEquals("Example Domain", parser.parse("http://example.edu/").getTitle());
+    }
+
+    public void testParser7() throws Exception {
+        HtmlParser parser = new HtmlParser();
+        assertEquals("http://example.com/", parser.parse("http://example.com/").getLink());
+    }
+
 }
