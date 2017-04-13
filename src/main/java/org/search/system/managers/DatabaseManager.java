@@ -28,7 +28,6 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.sun.istack.internal.Nullable;
 import org.bson.Document;
 import org.search.system.models.MongoInstance;
 import org.search.system.utils.LogUtil;
@@ -104,7 +103,7 @@ public class DatabaseManager {
         return best;
     }
 
-    public List<Document> find(String databaseName, String collectionName, @Nullable Document query) {
+    public List<Document> find(String databaseName, String collectionName, Document query) {
         ArrayList<Document> result = new ArrayList<>();
         for (MongoInstance instance : instances) {
             MongoClient mongo = new MongoClient(instance.getHost(), instance.getPort());
@@ -133,8 +132,7 @@ public class DatabaseManager {
         return result;
     }
 
-    public @Nullable
-    Document findOne(String databaseName, String collectionName, Document query) {
+    public Document findOne(String databaseName, String collectionName, Document query) {
         Document result = null;
         for (MongoInstance instance : instances) {
             MongoClient mongo = new MongoClient(instance.getHost(), instance.getPort());
