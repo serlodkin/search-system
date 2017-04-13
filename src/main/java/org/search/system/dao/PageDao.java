@@ -26,11 +26,12 @@ package org.search.system.dao;
 
 import com.google.gson.Gson;
 import com.mongodb.MongoClient;
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.search.system.interfaces.Page;
+import org.search.system.managers.DatabaseManager;
+import org.search.system.models.MongoInstance;
 import org.search.system.models.NullablePage;
 import org.search.system.utils.LogUtil;
 
@@ -44,13 +45,12 @@ import java.util.List;
  */
 public class PageDao {
 
-    private static final int PORT = 27017;
-
-    private static final String HOST_NAME = "localhost";
+    private static final DatabaseManager databaseManager = new DatabaseManager();
 
 
     public void insertPage(Page page) {
-        MongoClient mongo = new MongoClient(HOST_NAME, PORT);
+        MongoInstance mongoInstance = databaseManager.getInstance();
+        MongoClient mongo = new MongoClient(mongoInstance.getHost(), mongoInstance.getPort());
         try {
             MongoDatabase pages=mongo.getDatabase("pages");
             Document document = new Document();
@@ -75,19 +75,15 @@ public class PageDao {
     }
 
     public List<Page> getPages(String tag){
-        MongoClient mongo = new MongoClient(HOST_NAME, PORT);
         ArrayList<Page> result = new ArrayList<>();
         try {
-            MongoDatabase pages=mongo.getDatabase("pages");
-            MongoCollection<Document> data=pages.getCollection(tag);
-            FindIterable<Document> cursor = data.find();
+            Document query = null;
+            List<Document> data = databaseManager.find("pages", tag, query);
             Gson gson = new Gson();
-            for (Document doc:cursor){
+            for (Document doc : data) {
                 result.add(gson.fromJson(doc.toJson(), NullablePage.class));
             }
-            mongo.close();
         } catch (Exception ex) {
-            mongo.close();
             LogUtil.log(ex.toString());
         }
         return result;

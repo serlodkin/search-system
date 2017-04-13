@@ -44,6 +44,7 @@ public class WordDao {
 
     private static final DatabaseManager databaseManager = new DatabaseManager();
 
+
     public Word getWord(String word) {
         Word res = new Word(word, new ArrayList<>());
         try {
