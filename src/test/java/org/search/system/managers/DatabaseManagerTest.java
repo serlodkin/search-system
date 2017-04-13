@@ -70,7 +70,7 @@ public class DatabaseManagerTest extends TestCase {
 
     public void testGetInstance() throws Exception {
         DatabaseManager databaseManager = new DatabaseManager();
-        MongoInstance exceptedInstance = new MongoInstance("localhost", 27017);
+        MongoInstance exceptedInstance = new MongoInstance("localhost", TEST_PORT);
         MongoInstance instance = databaseManager.getInstance();
         assertEquals(exceptedInstance.getHost(), instance.getHost());
         assertEquals(exceptedInstance.getPort(), instance.getPort());
