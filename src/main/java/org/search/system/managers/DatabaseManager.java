@@ -1,13 +1,46 @@
+/*
+MIT License
+
+Copyright (c) 2016-2017 Daniil Matkov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+ */
+
 package org.search.system.managers;
 
+import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.sun.istack.internal.Nullable;
+import org.bson.Document;
 import org.search.system.models.MongoInstance;
 import org.search.system.utils.LogUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Object holds all MongoDb instances, provides best one
+ * Holds all operations on MongoDb instances, provides best one for insert.
+ * allow to make find requests on all instances
+ * @author Daniil Matkov
  */
 public class DatabaseManager {
 
@@ -23,6 +56,12 @@ public class DatabaseManager {
     private int nextPort = DEFAULT_PORT;
 
     private ArrayList<MongoInstance> instances = new ArrayList<>();
+
+    DatabaseManager() {
+        if (instances.isEmpty()) {
+            instances.add(new MongoInstance(DEFAULT_HOST_NAME, DEFAULT_PORT));
+        }
+    }
 
     private void createNewInstance() {
         String command = " mongod --dbpath " + DEFAULT_FOLDER + "--port " + Integer.toString(nextPort);
@@ -64,4 +103,55 @@ public class DatabaseManager {
         }
         return best;
     }
+
+    public List<Document> find(String databaseName, String collectionName, @Nullable Document query) {
+        ArrayList<Document> result = new ArrayList<>();
+        for (MongoInstance instance : instances) {
+            MongoClient mongo = new MongoClient(instance.getHost(), instance.getPort());
+            try {
+                MongoDatabase database = mongo.getDatabase(databaseName);
+                MongoCollection<Document> data = database.getCollection(collectionName);
+                FindIterable<Document> cursor = null;
+                if (query == null) {
+                    cursor = data.find();
+                } else {
+                    cursor = data.find(query);
+                }
+                if (cursor == null) {
+                    break;
+
+                }
+                for (Document doc : cursor) {
+                    result.add(doc);
+                }
+                mongo.close();
+            } catch (Exception ex) {
+                mongo.close();
+                LogUtil.log(ex.toString());
+            }
+        }
+        return result;
+    }
+
+    public @Nullable
+    Document findOne(String databaseName, String collectionName, Document query) {
+        Document result = null;
+        for (MongoInstance instance : instances) {
+            MongoClient mongo = new MongoClient(instance.getHost(), instance.getPort());
+            try {
+                MongoDatabase database = mongo.getDatabase(databaseName);
+                MongoCollection<Document> collection = database.getCollection(collectionName);
+                result = collection.find(query).first();
+                mongo.close();
+            } catch (Exception ex) {
+                LogUtil.log(ex.toString());
+                mongo.close();
+            }
+            if (result != null) {
+                break;
+            }
+        }
+        return result;
+    }
+
 }
