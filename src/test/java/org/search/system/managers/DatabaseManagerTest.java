@@ -18,6 +18,9 @@ import java.util.List;
  */
 public class DatabaseManagerTest extends TestCase {
 
+    private static final int TEST_PORT = 27017;
+
+
     @Override
     public void setUp() throws Exception {
         super.setUp();
