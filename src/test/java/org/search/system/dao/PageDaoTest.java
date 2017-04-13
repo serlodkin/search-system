@@ -40,7 +40,6 @@ public class PageDaoTest extends TestCase {
         excepted.add("test");
         excepted.add("tests");
         excepted.add("testing");
-
         List<Page> result = pageDao.getPages("test");
         assertEquals(excepted, result.get(0).getTags());
     }

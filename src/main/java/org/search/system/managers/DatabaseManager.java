@@ -67,6 +67,7 @@ public class DatabaseManager {
         try {
             Process process = Runtime.getRuntime().exec(command);
             instances.add(new MongoInstance(DEFAULT_HOST_NAME, nextPort + 1));
+            LogUtil.log("Trying to run MongoDb on port: " + Integer.toString(nextPort) + " with exitcode: " + Integer.toString(process.exitValue()));
             nextPort++;
         } catch (IOException ex) {
             LogUtil.log(ex.toString());
