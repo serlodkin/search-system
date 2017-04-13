@@ -56,7 +56,7 @@ public class DatabaseManager {
 
     private ArrayList<MongoInstance> instances = new ArrayList<>();
 
-    DatabaseManager() {
+    public DatabaseManager() {
         if (instances.isEmpty()) {
             instances.add(new MongoInstance(DEFAULT_HOST_NAME, DEFAULT_PORT));
         }

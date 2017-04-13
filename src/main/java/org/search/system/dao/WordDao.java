@@ -29,41 +29,38 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+import org.search.system.managers.DatabaseManager;
+import org.search.system.models.MongoInstance;
 import org.search.system.models.Word;
 import org.search.system.utils.LogUtil;
 
 import java.util.ArrayList;
 
 /*
- * Data access object for word collection using MongoDb/
+ * Data access object for word collection using MongoDb
  * @author Daniil Matkov
  */
 public class WordDao {
 
-    private static final int PORT = 27017;
-
-    private static final String HOST_NAME = "localhost";
+    private static final DatabaseManager databaseManager = new DatabaseManager();
 
     public Word getWord(String word) {
-        MongoClient mongo = new MongoClient(HOST_NAME, PORT);
         Word res = new Word(word, new ArrayList<>());
         try {
-            MongoDatabase synonyms = mongo.getDatabase("synonyms");
-            MongoCollection<Document> collection = synonyms.getCollection("synonyms");
             Document query = new Document();
             query.put("word", word);
-            Document result = collection.find(query).first();
+            Document result = databaseManager.findOne("synonyms", "synonyms", query);
             Gson gson = new Gson();
             res = gson.fromJson(result.toJson(), Word.class);
         } catch (Exception ex) {
             LogUtil.log(ex.toString());
         }
-        mongo.close();
         return res;
     }
 
     public void insertPage(Word word) {
-        MongoClient mongo = new MongoClient(HOST_NAME, PORT);
+        MongoInstance mongoInstance = databaseManager.getInstance();
+        MongoClient mongo = new MongoClient(mongoInstance.getHost(), mongoInstance.getPort());
         try {
             MongoDatabase synonyms = mongo.getDatabase("synonyms");
             MongoCollection<Document> collection = synonyms.getCollection("synonyms");
