@@ -31,11 +31,14 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.search.system.models.MongoInstance;
 import org.search.system.utils.LogUtil;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Holds all operations on MongoDb instances, provides best one for insert.
