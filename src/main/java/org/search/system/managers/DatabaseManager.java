@@ -51,6 +51,7 @@ public class DatabaseManager {
 
     private static final int MAX_DATABASE_SIZE = 65536;
 
+    private static final int MAX_THREADS = 10;
 
     private int nextPort = DEFAULT_PORT;
 
@@ -104,31 +105,36 @@ public class DatabaseManager {
         return best;
     }
 
+    private List<Document> fetchFromInstance(String databaseName, String collectionName, Document query, MongoInstance instance) {
+        ArrayList<Document> result = new ArrayList<>();
+        MongoClient mongo = new MongoClient(instance.getHost(), instance.getPort());
+        try {
+            MongoDatabase database = mongo.getDatabase(databaseName);
+            MongoCollection<Document> data = database.getCollection(collectionName);
+            FindIterable<Document> cursor = null;
+            if (query == null) {
+                cursor = data.find();
+            } else {
+                cursor = data.find(query);
+            }
+            if (cursor == null) {
+                return result;
+            }
+            for (Document doc : cursor) {
+                result.add(doc);
+            }
+            mongo.close();
+        } catch (Exception ex) {
+            mongo.close();
+            LogUtil.log(ex.toString());
+        }
+        return result;
+    }
+
     public List<Document> find(String databaseName, String collectionName, Document query) {
         ArrayList<Document> result = new ArrayList<>();
         for (MongoInstance instance : instances) {
-            MongoClient mongo = new MongoClient(instance.getHost(), instance.getPort());
-            try {
-                MongoDatabase database = mongo.getDatabase(databaseName);
-                MongoCollection<Document> data = database.getCollection(collectionName);
-                FindIterable<Document> cursor = null;
-                if (query == null) {
-                    cursor = data.find();
-                } else {
-                    cursor = data.find(query);
-                }
-                if (cursor == null) {
-                    break;
-
-                }
-                for (Document doc : cursor) {
-                    result.add(doc);
-                }
-                mongo.close();
-            } catch (Exception ex) {
-                mongo.close();
-                LogUtil.log(ex.toString());
-            }
+            result.addAll(fetchFromInstance(databaseName, collectionName, query, instance));
         }
         return result;
     }
