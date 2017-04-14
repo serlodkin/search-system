@@ -35,6 +35,7 @@ import org.search.system.utils.LogUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
 
 /**
  * Holds all operations on MongoDb instances, provides best one for insert.
@@ -52,6 +53,10 @@ public class DatabaseManager {
     private static final int MAX_DATABASE_SIZE = 65536;
 
     private static final int MAX_THREADS = 10;
+
+    private static final int MAX_WAIT_TIME = 5;
+
+    private static final TimeUnit MAX_TIME_UNIT = TimeUnit.SECONDS;
 
     private int nextPort = DEFAULT_PORT;
 
@@ -132,9 +137,24 @@ public class DatabaseManager {
     }
 
     public List<Document> find(String databaseName, String collectionName, Document query) {
+        ExecutorService executor = Executors.newFixedThreadPool(MAX_THREADS);
         ArrayList<Document> result = new ArrayList<>();
+        ArrayList<Future<List<Document>>> instanceFuture = new ArrayList<>();
         for (MongoInstance instance : instances) {
-            result.addAll(fetchFromInstance(databaseName, collectionName, query, instance));
+            instanceFuture.add(executor.submit(() -> fetchFromInstance(databaseName, collectionName, query, instance)));
+        }
+        executor.shutdown();
+        try {
+            executor.awaitTermination(MAX_WAIT_TIME, MAX_TIME_UNIT);
+        } catch (InterruptedException e) {
+            LogUtil.log(e.getMessage());
+        }
+        for (Future<List<Document>> future : instanceFuture) {
+            try {
+                result.addAll(future.get());
+            } catch (InterruptedException | ExecutionException e) {
+                LogUtil.log(e.getMessage());
+            }
         }
         return result;
     }
