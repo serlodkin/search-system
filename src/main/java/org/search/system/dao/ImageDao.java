@@ -56,7 +56,7 @@ public class ImageDao {
             document.put("description",image.getDescription());
             document.put("link",image.getLink());
             document.put("tags",image.getTags());
-            document.put("hash",image.getImageHash());
+            document.put("imageHash", image.getImageHash());
             for(String tag:image.getTags()){
                 MongoCollection<Document> collection = pages.getCollection(tag.toLowerCase());
                 collection.insertOne(document);
@@ -93,7 +93,7 @@ public class ImageDao {
         ArrayList<Image> result = new ArrayList<>();
         try {
             Document query = new Document();
-            query.put("hash", image.getImageHash());
+            query.put("imageHash", image.getImageHash());
             List<Document> data = databaseManager.find("images","imagesHash", query);
             Gson gson = new Gson();
             for (Document doc : data) {

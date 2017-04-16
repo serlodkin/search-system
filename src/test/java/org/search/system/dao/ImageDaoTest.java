@@ -31,7 +31,7 @@ public class ImageDaoTest extends TestCase {
         test.add("testing");
         Image excepted=new Image("test","test",test,"test",Integer.toString("test".hashCode()));
         imageDao.insertImage(excepted);
-        Image result =imageDao.getImages("data").get(0);
+        Image result = imageDao.getImages("test").get(0);
         assertEquals(excepted.getDescription(), result.getDescription());
         assertEquals(excepted.getLink(), result.getLink());
         assertEquals(excepted.getTags(), result.getTags());
@@ -46,7 +46,7 @@ public class ImageDaoTest extends TestCase {
         test.add("tests");
         test.add("testing");
         Image excepted=new Image("test","test",test,"test",Integer.toString("test".hashCode()));
-        Image result =imageDao.getImages("data").get(0);
+        Image result = imageDao.getImages("test").get(0);
         assertEquals(excepted.getDescription(), result.getDescription());
         assertEquals(excepted.getLink(), result.getLink());
         assertEquals(excepted.getTags(), result.getTags());
