@@ -1,7 +1,6 @@
 package org.search.system.dao;
 
 import junit.framework.TestCase;
-import org.search.system.interfaces.Page;
 import org.search.system.models.Image;
 
 import java.util.ArrayList;
