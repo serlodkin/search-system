@@ -65,8 +65,6 @@ public class ImageDao {
                 MongoCollection<Document> collection = pages.getCollection(tag.toLowerCase());
                 collection.insertOne(document);
             }
-            document = new Document();
-            document.put("hash",image.getImageHash());
             MongoCollection<Document> collection = pages.getCollection("imagesHash");
             collection.insertOne(document);
             mongo.close();

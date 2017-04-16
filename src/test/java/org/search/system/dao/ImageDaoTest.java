@@ -67,6 +67,7 @@ public class ImageDaoTest extends TestCase {
         List<Image> excepted=new ArrayList<>();
         excepted.add(image);
         excepted.add(image1);
+        assertEquals(excepted.get(1).getImageHash(), imageDao.findSame(image).get(0).getImageHash());
     }
 
 }
