@@ -10,7 +10,7 @@ public class HtmlParserTest extends TestCase {
     public void testParse1() throws Exception{
         HtmlParser parser=new HtmlParser();
         assertEquals(0, parser.parse("https://habrahabr.ru/").getRang());
-        assertEquals("Интересные публикации / Хабрахабр", parser.parse("https://habrahabr.ru/").getTitle());
+        assertEquals("Лучшие публикации за сутки / Хабрахабр", parser.parse("https://habrahabr.ru/").getTitle());
     }
 
     public void testParse2() throws Exception{
