@@ -7,7 +7,7 @@ package org.search.system.utils;
  */
 public class MistypeUtil {
 
-    public static int LevensteinDistance(String first, String second){
+    public static int levensteinDistance(String first, String second){
         if(first==null){
             throw new IllegalArgumentException("String can't be null");
         }

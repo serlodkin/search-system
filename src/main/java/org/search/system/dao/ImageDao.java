@@ -25,6 +25,7 @@ SOFTWARE.
 package org.search.system.dao;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -83,7 +84,7 @@ public class ImageDao {
             for (Document doc : data) {
                 result.add(gson.fromJson(doc.toJson(), Image.class));
             }
-        } catch (Exception ex) {
+        } catch (JsonSyntaxException ex) {
             LogUtil.log(ex.toString());
         }
         return result;
