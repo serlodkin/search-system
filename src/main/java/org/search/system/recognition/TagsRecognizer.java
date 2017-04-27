@@ -47,8 +47,7 @@ public class TagsRecognizer implements Recognizer {
      */
     @Override
     public ArrayList<Word> recognize(String request) {
-        ArrayList<String> words = new ArrayList<>((Arrays.asList(request.split(",")))
-                .stream()
+        ArrayList<String> words = new ArrayList<>(Arrays.stream(request.split(","))
                 .parallel()
                 .map(String::trim)
                 .collect(Collectors.toList()));
