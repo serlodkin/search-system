@@ -24,8 +24,7 @@ SOFTWARE.
 
 package org.search.system.dao;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
+
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -37,7 +36,6 @@ import org.search.system.models.NullablePage;
 import org.search.system.tools.MongoNullQuery;
 import org.search.system.utils.LogUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -78,8 +76,8 @@ public class PageDao {
         }
     }
 
-    public List<Page> getPages(String tag) {
-        MongoNullQuery<Page> mongoNullQuery = new MongoNullQuery<>(Page.class);
+    public List<NullablePage> getPages(String tag) {
+        MongoNullQuery<NullablePage> mongoNullQuery = new MongoNullQuery<>(NullablePage.class);
         return mongoNullQuery.getDataByTag(DATABASE_NAME, tag);
     }
 }
