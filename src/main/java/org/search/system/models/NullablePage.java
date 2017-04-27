@@ -100,4 +100,8 @@ public class NullablePage implements Page {
                 + '}';
     }
 
+    public Page toPage() {
+        return this;
+    }
+
 }

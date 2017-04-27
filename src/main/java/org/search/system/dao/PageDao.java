@@ -36,7 +36,9 @@ import org.search.system.models.NullablePage;
 import org.search.system.tools.MongoNullQuery;
 import org.search.system.utils.LogUtil;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /*
  * Data access object for page collection using MongoDb
@@ -76,8 +78,8 @@ public class PageDao {
         }
     }
 
-    public List<NullablePage> getPages(String tag) {
+    public List<Page> getPages(String tag) {
         MongoNullQuery<NullablePage> mongoNullQuery = new MongoNullQuery<>(NullablePage.class);
-        return mongoNullQuery.getDataByTag(DATABASE_NAME, tag);
+        return mongoNullQuery.getDataByTag(DATABASE_NAME, tag).stream().map(NullablePage::toPage).collect(Collectors.toCollection(ArrayList::new));
     }
 }
