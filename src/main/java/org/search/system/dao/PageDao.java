@@ -25,6 +25,7 @@ SOFTWARE.
 package org.search.system.dao;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -33,6 +34,7 @@ import org.search.system.interfaces.Page;
 import org.search.system.managers.DatabaseManager;
 import org.search.system.models.MongoInstance;
 import org.search.system.models.NullablePage;
+import org.search.system.tools.MongoNullQuery;
 import org.search.system.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -47,19 +49,21 @@ public class PageDao {
 
     private static final DatabaseManager databaseManager = new DatabaseManager();
 
+    private static final String DATABASE_NAME = "pages";
+
 
     public void insertPage(Page page) {
         MongoInstance mongoInstance = databaseManager.getInstance();
         MongoClient mongo = new MongoClient(mongoInstance.getHost(), mongoInstance.getPort());
         try {
-            MongoDatabase pages=mongo.getDatabase("pages");
+            MongoDatabase pages = mongo.getDatabase(DATABASE_NAME);
             Document document = new Document();
-            document.put("title",page.getTitle());
-            document.put("description",page.getDescription());
-            document.put("rang",0);
-            document.put("link",page.getLink());
-            document.put("tags",page.getTags());
-            for(String tag:page.getTags()){
+            document.put("title", page.getTitle());
+            document.put("description", page.getDescription());
+            document.put("rang", 0);
+            document.put("link", page.getLink());
+            document.put("tags", page.getTags());
+            for (String tag : page.getTags()) {
                 MongoCollection<Document> collection = pages.getCollection(tag.toLowerCase());
                 collection.insertOne(document);
             }
@@ -74,19 +78,8 @@ public class PageDao {
         }
     }
 
-    public List<Page> getPages(String tag){
-        ArrayList<Page> result = new ArrayList<>();
-        try {
-            Document query = null;
-            List<Document> data = databaseManager.find("pages", tag, query);
-            Gson gson = new Gson();
-            for (Document doc : data) {
-                result.add(gson.fromJson(doc.toJson(), NullablePage.class));
-            }
-        } catch (Exception ex) {
-            LogUtil.log(ex.toString());
-        }
-        return result;
+    public List<Page> getPages(String tag) {
+        MongoNullQuery<Page> mongoNullQuery = new MongoNullQuery<>(Page.class);
+        return mongoNullQuery.getDataByTag(DATABASE_NAME, tag);
     }
-
 }

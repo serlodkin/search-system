@@ -33,6 +33,7 @@ import org.bson.Document;
 import org.search.system.managers.DatabaseManager;
 import org.search.system.models.Image;
 import org.search.system.models.MongoInstance;
+import org.search.system.tools.MongoNullQuery;
 import org.search.system.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -47,11 +48,14 @@ public class ImageDao {
 
     private static final DatabaseManager databaseManager = new DatabaseManager();
 
+    private static final String DATABASE_NAME = "images";
+
+
     public void insertImage(Image image) {
         MongoInstance mongoInstance = databaseManager.getInstance();
         MongoClient mongo = new MongoClient(mongoInstance.getHost(), mongoInstance.getPort());
         try {
-            MongoDatabase pages=mongo.getDatabase("images");
+            MongoDatabase pages=mongo.getDatabase(DATABASE_NAME);
             Document document = new Document();
             document.put("title",image.getTitle());
             document.put("description",image.getDescription());
@@ -76,18 +80,8 @@ public class ImageDao {
     }
 
     public List<Image> getImages(String tag){
-        ArrayList<Image> result = new ArrayList<>();
-        try {
-            Document query = null;
-            List<Document> data = databaseManager.find("images", tag, query);
-            Gson gson = new Gson();
-            for (Document doc : data) {
-                result.add(gson.fromJson(doc.toJson(), Image.class));
-            }
-        } catch (JsonSyntaxException ex) {
-            LogUtil.log(ex.toString());
-        }
-        return result;
+        MongoNullQuery<Image> mongoNullQuery=new MongoNullQuery<>(Image.class);
+        return mongoNullQuery.getDataByTag(DATABASE_NAME,tag);
     }
 
     public List<Image> findSame(Image image){
@@ -95,7 +89,7 @@ public class ImageDao {
         try {
             Document query = new Document();
             query.put("imageHash", image.getImageHash());
-            List<Document> data = databaseManager.find("images","imagesHash", query);
+            List<Document> data = databaseManager.find(DATABASE_NAME,"imagesHash", query);
             Gson gson = new Gson();
             for (Document doc : data) {
                 result.add(gson.fromJson(doc.toJson(), Image.class));
