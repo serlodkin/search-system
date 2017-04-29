@@ -24,7 +24,6 @@ SOFTWARE.
 
 package org.search.system.dao;
 
-import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -35,8 +34,6 @@ import org.search.system.models.MongoInstance;
 import org.search.system.tools.MongoNullQuery;
 import org.search.system.tools.MongoQuery;
 import org.search.system.utils.LogUtil;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /*
