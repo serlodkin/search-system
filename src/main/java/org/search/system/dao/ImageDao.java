@@ -25,7 +25,6 @@ SOFTWARE.
 package org.search.system.dao;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -34,6 +33,7 @@ import org.search.system.managers.DatabaseManager;
 import org.search.system.models.Image;
 import org.search.system.models.MongoInstance;
 import org.search.system.tools.MongoNullQuery;
+import org.search.system.tools.MongoQuery;
 import org.search.system.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -85,19 +85,11 @@ public class ImageDao {
     }
 
     public List<Image> findSame(Image image){
-        ArrayList<Image> result = new ArrayList<>();
-        try {
-            Document query = new Document();
-            query.put("imageHash", image.getImageHash());
-            List<Document> data = databaseManager.find(DATABASE_NAME,"imagesHash", query);
-            Gson gson = new Gson();
-            for (Document doc : data) {
-                result.add(gson.fromJson(doc.toJson(), Image.class));
-            }
-        } catch (Exception ex) {
-            LogUtil.log(ex.toString());
-        }
-        return result;
+        MongoQuery<Image> mongoQuery=new MongoQuery<>(Image.class);
+        Document query = new Document();
+        query.put("imageHash", image.getImageHash());
+        return mongoQuery.getDataByTag(DATABASE_NAME,"imagesHash", query);
+
     }
 
 }
