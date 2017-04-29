@@ -85,7 +85,7 @@ public class ImageDao {
         MongoQuery<Image> mongoQuery=new MongoQuery<>(Image.class);
         Document query = new Document();
         query.put("imageHash", image.getImageHash());
-        return mongoQuery.getDataByTag(DATABASE_NAME,"imagesHash", query);
+        return mongoQuery.getDataByCollection(DATABASE_NAME,"imagesHash", query);
 
     }
 

@@ -48,10 +48,10 @@ public class MongoQuery<T> {
         this.typeParameterClass = typeParameterClass;
     }
 
-    public ArrayList<T> getDataByTag(String databaseName, String tag, Document query){
+    public ArrayList<T> getDataByCollection(String databaseName, String collection, Document query){
         ArrayList<T> result=new ArrayList<>();
         try {
-            List<Document> data = databaseManager.find(databaseName, tag, query);
+            List<Document> data = databaseManager.find(databaseName, collection, query);
             Gson gson = new Gson();
             for (Document doc : data){
                 result.add(gson.fromJson(doc.toJson(), this.typeParameterClass));
