@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-package org.search.system.utils;
+package org.search.system.loggers;
 
-import org.search.system.loggers.FileLogger;
+import org.search.system.interfaces.Logger;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -33,15 +33,26 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/*
- * Log utils
+/**
  * @author Daniil Matkov
+ * @since 13.07.2017
  */
-public class LogUtil {
+public class FileLogger implements Logger {
 
-    public static void log(String info) {
-        FileLogger logger = new FileLogger();
-        logger.log(info);
+    private static final String OUTPUT_FILENAME = "search_system_log.log";
+
+    private static String getCurrentLocalDateTimeStamp() {
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss.SSS"));
     }
 
+    @Override
+    public void log(String info) {
+        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(OUTPUT_FILENAME, true)))) {
+            writer.print(getCurrentLocalDateTimeStamp());
+            writer.print(" ");
+            writer.println(info);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

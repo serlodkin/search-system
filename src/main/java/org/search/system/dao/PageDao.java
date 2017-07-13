@@ -80,6 +80,8 @@ public class PageDao {
 
     public List<Page> getPages(String tag) {
         MongoNullQuery<NullablePage> mongoNullQuery = new MongoNullQuery<>(NullablePage.class);
-        return mongoNullQuery.getDataByTag(DATABASE_NAME, tag).stream().map(NullablePage::toPage).collect(Collectors.toCollection(ArrayList::new));
+        return mongoNullQuery.getDataByTag(DATABASE_NAME, tag).stream()
+                .map(NullablePage::toPage)
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 }

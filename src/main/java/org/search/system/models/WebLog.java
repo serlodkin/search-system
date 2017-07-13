@@ -22,26 +22,45 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-package org.search.system.utils;
+package org.search.system.models;
 
-import org.search.system.loggers.FileLogger;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.security.SecureRandom;
+import java.util.Date;
 
-/*
- * Log utils
+/**
  * @author Daniil Matkov
+ * @since 13.07.2017
  */
-public class LogUtil {
+public class WebLog {
 
-    public static void log(String info) {
-        FileLogger logger = new FileLogger();
-        logger.log(info);
+    private int id;
+
+    private String from;
+
+    private String status;
+
+    private String message;
+
+
+    public WebLog(String from, String status, String message) {
+        this.id = generateRandomInteger();
+        this.from = from;
+        this.status = status;
+        this.message = message;
     }
+
+    private static int generateRandomInteger() {
+        SecureRandom rand = new SecureRandom();
+        rand.setSeed(new Date().getTime());
+        return rand.nextInt(Integer.MAX_VALUE);
+    }
+
+    public String toJsonString() {
+        return new Gson().toJson(this);
+    }
+
 
 }
