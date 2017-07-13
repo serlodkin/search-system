@@ -24,7 +24,16 @@ SOFTWARE.
 
 package org.search.system.loggers;
 
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.search.system.interfaces.Logger;
+import org.search.system.models.WebLog;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 /**
  * @author Daniil Matkov
@@ -37,5 +46,17 @@ public class WebLogger implements Logger {
     @Override
     public void log(String info) {
 
+    }
+
+    private void sendToServer(WebLog log) {
+        try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()) {
+            HttpPost request = new HttpPost(url);
+            StringEntity params = new StringEntity(log.toJsonString());
+            request.addHeader("content-type", "application/json");
+            request.setEntity(params);
+            httpClient.execute(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
