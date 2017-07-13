@@ -56,7 +56,9 @@ public class LogUtil {
                 logger = new FileLogger();
             }
         }
-        logger.log(info);
+        if (logger != null) {
+            logger.log(info);
+        }
     }
 
 }
