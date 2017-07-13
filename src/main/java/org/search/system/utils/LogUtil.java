@@ -44,13 +44,24 @@ import java.util.Objects;
  */
 public class LogUtil {
 
-    public static void log(String info) throws Exception {
-        Logger logger;
-        Config config = new ConfigParser().getConfig();
-        if (Objects.equals(config.getLoggingType(), "external")) {
-            logger = new WebLogger();
-        } else {
-            logger = new FileLogger();
+    public static void log(String info) {
+        Logger logger = null;
+        Config config = null;
+        try {
+            config = new ConfigParser().getConfig();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (config != null) {
+            if (Objects.equals(config.getLoggingType(), "external")) {
+                try {
+                    logger = new WebLogger();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                logger = new FileLogger();
+            }
         }
         logger.log(info);
     }

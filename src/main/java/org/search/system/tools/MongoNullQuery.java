@@ -24,7 +24,7 @@ public class MongoNullQuery<T> {
         this.typeParameterClass = typeParameterClass;
     }
 
-    public ArrayList<T> getDataByTag(String databaseName,String tag){
+    public ArrayList<T> getDataByTag(String databaseName, String tag) {
         ArrayList<T> result=new ArrayList<>();
         try {
             Document query = null;
