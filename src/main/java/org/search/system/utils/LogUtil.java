@@ -24,7 +24,6 @@ SOFTWARE.
 
 package org.search.system.utils;
 
-import com.google.common.base.Objects;
 import org.search.system.interfaces.Logger;
 import org.search.system.loggers.FileLogger;
 import org.search.system.loggers.WebLogger;
