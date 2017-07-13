@@ -35,6 +35,7 @@ import java.util.Objects;
 /*
  * Log utils
  * @author Daniil Matkov
+ * @author Sergey Lodkin
  */
 public class LogUtil {
 
