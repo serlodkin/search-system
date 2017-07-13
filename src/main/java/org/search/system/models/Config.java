@@ -10,9 +10,15 @@ public class Config {
 
     private String loggingUrl;
 
-    public Config(String loggingType, String loggingUrl) {
+    private String fromName;
+
+    private String status;
+
+    public Config(String loggingType, String loggingUrl, String fromName, String status) {
         this.loggingType = loggingType;
         this.loggingUrl = loggingUrl;
+        this.fromName = fromName;
+        this.status = status;
     }
 
     public String getLoggingType() {
@@ -29,5 +35,21 @@ public class Config {
 
     public void setLoggingUrl(String loggingUrl) {
         this.loggingUrl = loggingUrl;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getFromName() {
+        return fromName;
+    }
+
+    public void setFromName(String fromName) {
+        this.fromName = fromName;
     }
 }
