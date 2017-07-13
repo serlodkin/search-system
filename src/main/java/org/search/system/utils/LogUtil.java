@@ -24,7 +24,11 @@ SOFTWARE.
 
 package org.search.system.utils;
 
+import org.search.system.interfaces.Logger;
 import org.search.system.loggers.FileLogger;
+import org.search.system.loggers.WebLogger;
+import org.search.system.models.Config;
+import org.search.system.parsers.ConfigParser;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -32,6 +36,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 /*
  * Log utils
@@ -39,8 +44,14 @@ import java.time.format.DateTimeFormatter;
  */
 public class LogUtil {
 
-    public static void log(String info) {
-        FileLogger logger = new FileLogger();
+    public static void log(String info) throws Exception {
+        Logger logger;
+        Config config = new ConfigParser().getConfig();
+        if (Objects.equals(config.getLoggingType(), "external")) {
+            logger = new WebLogger();
+        } else {
+            logger = new FileLogger();
+        }
         logger.log(info);
     }
 
