@@ -34,25 +34,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * Returns List database elements from collection, with query=null
+ * Returns List database elements from collection by query
  *
  * @author Daniil Matkov
  */
-public class MongoNullQuery<T> {
+public class MongoQuery<T> {
 
     private static final DatabaseManager databaseManager = new DatabaseManager();
 
     private Class<T> typeParameterClass;
 
-    public MongoNullQuery(Class<T> typeParameterClass) {
+    public MongoQuery(Class<T> typeParameterClass) {
         this.typeParameterClass = typeParameterClass;
     }
 
-    public ArrayList<T> getDataByTag(String databaseName, String tag) {
+    public ArrayList<T> getDataByCollection(String databaseName, String collection, Document query){
         ArrayList<T> result=new ArrayList<>();
         try {
-            Document query = null;
-            List<Document> data = databaseManager.find(databaseName, tag, query);
+            List<Document> data = databaseManager.find(databaseName, collection, query);
             Gson gson = new Gson();
             for (Document doc : data){
                 result.add(gson.fromJson(doc.toJson(), this.typeParameterClass));
