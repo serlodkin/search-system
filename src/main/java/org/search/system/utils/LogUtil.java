@@ -24,6 +24,7 @@ SOFTWARE.
 
 package org.search.system.utils;
 
+import com.google.common.base.Objects;
 import org.search.system.interfaces.Logger;
 import org.search.system.loggers.FileLogger;
 import org.search.system.loggers.WebLogger;
@@ -45,17 +46,19 @@ public class LogUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (config != null) {
-            if (Objects.equals(config.getLoggingType(), "external")) {
-                try {
-                    logger = new WebLogger();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else {
-                logger = new FileLogger();
-            }
+        if (config == null) {
+            return;
         }
+        if (Objects.equals(config.getLoggingType(), "external")) {
+            try {
+                logger = new WebLogger();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (!Objects.equals(config.getLoggingType(), "none")) {
+            logger = new FileLogger();
+        }
+
         if (logger != null) {
             logger.log(info);
         }
